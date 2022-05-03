@@ -17,13 +17,13 @@ func TestExamplesCluster(t *testing.T) {
 	fmt.Println("start test----------")
 	t.Parallel()
 
-        MONGO_ORG := os.Getenv("MONGODB_ATLAS_ORG")
+	MONGO_ORG := os.Getenv("MONGODB_ATLAS_ORG")
 	terraformOptions := &terraform.Options{
 		TerraformDir: "../../examples/complete",
 		VARS: map[string]interface{}{
-			org_id: MONGO_ORG	
-		}
-        }
+			org_id: MONGO_ORG,
+		},
+	}
 	defer terraform.Destroy(t, terraformOptions)
 
 	terraform.Init(t, terraformOptions)
