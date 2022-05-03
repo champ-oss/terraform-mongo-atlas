@@ -1,4 +1,4 @@
-module github.com/champtitles/reponame
+module github.com/champ-oss/terraform-mongo-atlas
 
 go 1.17
 
