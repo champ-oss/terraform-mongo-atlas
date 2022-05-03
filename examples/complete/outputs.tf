@@ -9,7 +9,7 @@ output "standard_srv" {
   value       = module.this.standard_srv
 }
 
-output "cluster_connection_sting" {
+output "cluster_connection_string" {
   description = "trimmed down mongo uri"
   value       = module.this.cluster_connection_string
 }
