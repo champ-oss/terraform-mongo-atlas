@@ -8,6 +8,7 @@ import (
 	"go.mongodb.org/mongo-driver/mongo/options"
 	"go.mongodb.org/mongo-driver/mongo/readpref"
 	"os/exec"
+        "os"
 	"testing"
 )
 
@@ -20,8 +21,8 @@ func TestExamplesCluster(t *testing.T) {
 	MONGO_ORG := os.Getenv("MONGODB_ATLAS_ORG")
 	terraformOptions := &terraform.Options{
 		TerraformDir: "../../examples/complete",
-		VARS: map[string]interface{}{
-			org_id: MONGO_ORG,
+		Vars: map[string]interface{}{
+			"org_id": MONGO_ORG,
 		},
 	}
 	defer terraform.Destroy(t, terraformOptions)
