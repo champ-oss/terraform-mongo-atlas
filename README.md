@@ -38,5 +38,8 @@ terraform mongo atlas provider resource documentation  [_here_](https://registry
 
 * look at examples/complete/main.tf for usage 
 
+<!-- BEGIN_TF_DOCS -->
+<!-- END_TF_DOCS -->
+
 ## Project Status
 Project is: _complete_ 
