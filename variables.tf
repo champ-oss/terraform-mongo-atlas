@@ -54,6 +54,12 @@ variable "hour_of_day" {
   default     = 6
 }
 
+variable "disk_size_gb" {
+  description = "https://registry.terraform.io/providers/mongodb/mongodbatlas/latest/docs/resources/cluster#disk_size_gb"
+  type        = number
+  default     = 10
+}
+
 variable "teams" {
   description = "https://registry.terraform.io/providers/mongodb/mongodbatlas/latest/docs/resources/team#name"
   type        = map(any)
@@ -64,4 +70,28 @@ variable "existing_teams" {
   description = "https://registry.terraform.io/providers/mongodb/mongodbatlas/latest/docs/resources/team#name"
   type        = map(any)
   default     = {}
+}
+
+variable "create_dedicated_cluster" {
+  description = "create dedicated cluster by default"
+  type        = bool
+  default     = false
+}
+
+variable "auto_scaling_disk_gb_enabled" {
+  description = "https://registry.terraform.io/providers/mongodb/mongodbatlas/latest/docs/resources/cluster#auto_scaling_disk_gb_enabled"
+  type        = bool
+  default     = false
+}
+
+variable "cloud_backup" {
+  description = "https://registry.terraform.io/providers/mongodb/mongodbatlas/latest/docs/resources/cluster#cloud_backup"
+  type        = bool
+  default     = true
+}
+
+variable "cluster_type" {
+  description = "https://registry.terraform.io/providers/mongodb/mongodbatlas/latest/docs/resources/cluster#cluster_type"
+  type        = string
+  default     = "REPLICASET"
 }
