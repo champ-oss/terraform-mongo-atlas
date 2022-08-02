@@ -1,6 +1,6 @@
 data "mongodbatlas_cluster" "this" {
-  project_id = mongodbatlas_cluster.this.project_id
-  name       = mongodbatlas_cluster.this.name
+  project_id = mongodbatlas_cluster.this[count.index].project_id
+  name       = mongodbatlas_cluster.this[count.index].name
 }
 
 resource "mongodbatlas_cluster" "this" {
