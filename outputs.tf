@@ -17,7 +17,7 @@ output "password" {
 
 output "cluster_connection_string" {
   description = "trimmed down mongo uri endpoint"
-  value       = split("//", mongodbatlas_cluster.this[*].connection_strings[0].standard_srv)[1]
+  value       = split("//", data.mongodbatlas_cluster.this.connection_strings[0].standard_srv)[1]
 }
 
 output "project_id" {
