@@ -5,7 +5,7 @@ output "id" {
 
 output "standard_srv" {
   description = "mongo uri endpoint"
-  value       = mongodbatlas_cluster.this[count.index].connection_strings[0].standard_srv
+  value       = mongodbatlas_cluster.this[*].connection_strings[0].standard_srv
 }
 # Example return string: standard_srv = "mongodb+srv://cluster-atlas.ygo1m.mongodb.net"
 
@@ -17,7 +17,7 @@ output "password" {
 
 output "cluster_connection_string" {
   description = "trimmed down mongo uri endpoint"
-  value       = split("//", mongodbatlas_cluster.this[count.index].connection_strings[0].standard_srv)[1]
+  value       = split("//", mongodbatlas_cluster.this[*].connection_strings[0].standard_srv)[1]
 }
 
 output "project_id" {
