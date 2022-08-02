@@ -24,7 +24,6 @@ resource "mongodbatlas_cluster" "this" {
   auto_scaling_disk_gb_enabled = var.auto_scaling_disk_gb_enabled
   disk_size_gb                 = var.disk_size_gb
 
-
   lifecycle {
     prevent_destroy = true
     ignore_changes = [
