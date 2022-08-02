@@ -57,7 +57,7 @@ variable "hour_of_day" {
 variable "disk_size_gb" {
   description = "https://registry.terraform.io/providers/mongodb/mongodbatlas/latest/docs/resources/cluster#disk_size_gb"
   type        = number
-  default     = 10
+  default     = 0.5
 }
 
 variable "teams" {
@@ -70,12 +70,6 @@ variable "existing_teams" {
   description = "https://registry.terraform.io/providers/mongodb/mongodbatlas/latest/docs/resources/team#name"
   type        = map(any)
   default     = {}
-}
-
-variable "create_dedicated_cluster" {
-  description = "create dedicated cluster by default"
-  type        = bool
-  default     = false
 }
 
 variable "auto_scaling_disk_gb_enabled" {

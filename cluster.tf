@@ -1,5 +1,5 @@
 resource "mongodbatlas_cluster" "this" {
-  count      = var.create_dedicated_cluster ? 0 : 1
+
   project_id = mongodbatlas_project.this.id
   name       = var.cluster_name
 
@@ -21,6 +21,7 @@ resource "mongodbatlas_cluster" "this" {
 
   cloud_backup                 = var.cloud_backup
   auto_scaling_disk_gb_enabled = var.auto_scaling_disk_gb_enabled
+  disk_size_gb                 = var.disk_size_gb
 
 
   lifecycle {
