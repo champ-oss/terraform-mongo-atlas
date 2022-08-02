@@ -87,11 +87,17 @@ variable "auto_scaling_disk_gb_enabled" {
 variable "cloud_backup" {
   description = "https://registry.terraform.io/providers/mongodb/mongodbatlas/latest/docs/resources/cluster#cloud_backup"
   type        = bool
-  default     = true
+  default     = false
 }
 
 variable "cluster_type" {
   description = "https://registry.terraform.io/providers/mongodb/mongodbatlas/latest/docs/resources/cluster#cluster_type"
   type        = string
   default     = "REPLICASET"
+}
+
+variable "mongo_region" {
+  description = "https://registry.terraform.io/providers/mongodb/mongodbatlas/latest/docs/resources/cluster#provider_region_name"
+  type        = string
+  default     = "US_EAST_1"
 }
