@@ -8,6 +8,7 @@ resource "mongodbatlas_cluster" "this" {
   provider_region_name        = var.mongo_region
   provider_instance_size_name = var.provider_instance_size_name
   mongo_db_major_version      = var.mongo_db_major_version
+  cluster_type                = var.cluster_type
 
   replication_specs {
     num_shards = 1
