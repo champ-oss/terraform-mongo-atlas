@@ -21,7 +21,7 @@ variable "cluster_name" {
 variable "provider_instance_size_name" {
   description = "https://registry.terraform.io/providers/mongodb/mongodbatlas/latest/docs/resources/cluster#provider_instance_size_name"
   type        = string
-  default     = "M0"
+  default     = "M2"
 }
 
 variable "mongo_db_major_version" {
@@ -75,7 +75,7 @@ variable "existing_teams" {
 variable "auto_scaling_disk_gb_enabled" {
   description = "https://registry.terraform.io/providers/mongodb/mongodbatlas/latest/docs/resources/cluster#auto_scaling_disk_gb_enabled"
   type        = bool
-  default     = null
+  default     = false
 }
 
 variable "cloud_backup" {
@@ -94,4 +94,16 @@ variable "mongo_region" {
   description = "https://registry.terraform.io/providers/mongodb/mongodbatlas/latest/docs/resources/cluster#provider_region_name"
   type        = string
   default     = "US_EAST_1"
+}
+
+variable "provider_name" {
+  description = "Cloud service provider on which the server for a multi-tenant cluster is provisioned. This setting is only valid when providerSetting.providerName is TENANT and providerSetting.instanceSizeName is M2 or M5. The possible values are: AWS, GCP, AZURE"
+  type        = string
+  default     = "AWS"
+}
+
+variable "create_free_cluster" {
+  description = "create free cluster by default"
+  type        = bool
+  default     = true
 }
