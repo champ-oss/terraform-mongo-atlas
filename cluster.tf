@@ -4,7 +4,7 @@ resource "mongodbatlas_cluster" "this" {
   name       = var.cluster_name
 
   # Provider Settings "block"
-  provider_name               = "AWS"
+  provider_name               = "TENANT"
   provider_region_name        = var.mongo_region
   provider_instance_size_name = var.provider_instance_size_name
   mongo_db_major_version      = var.mongo_db_major_version

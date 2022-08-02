@@ -57,7 +57,7 @@ variable "hour_of_day" {
 variable "disk_size_gb" {
   description = "https://registry.terraform.io/providers/mongodb/mongodbatlas/latest/docs/resources/cluster#disk_size_gb"
   type        = number
-  default     = 0.5
+  default     = null
 }
 
 variable "teams" {
@@ -81,7 +81,7 @@ variable "auto_scaling_disk_gb_enabled" {
 variable "cloud_backup" {
   description = "https://registry.terraform.io/providers/mongodb/mongodbatlas/latest/docs/resources/cluster#cloud_backup"
   type        = bool
-  default     = null
+  default     = false
 }
 
 variable "cluster_type" {
