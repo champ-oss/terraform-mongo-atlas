@@ -59,7 +59,6 @@ variable "disk_size_gb" {
   type        = number
   default     = null
 }
-
 variable "teams" {
   description = "https://registry.terraform.io/providers/mongodb/mongodbatlas/latest/docs/resources/team#name"
   type        = map(any)
@@ -77,13 +76,11 @@ variable "auto_scaling_disk_gb_enabled" {
   type        = bool
   default     = false
 }
-
 variable "cloud_backup" {
   description = "https://registry.terraform.io/providers/mongodb/mongodbatlas/latest/docs/resources/cluster#cloud_backup"
   type        = bool
   default     = false
 }
-
 variable "cluster_type" {
   description = "https://registry.terraform.io/providers/mongodb/mongodbatlas/latest/docs/resources/cluster#cluster_type"
   type        = string
@@ -101,9 +98,8 @@ variable "provider_name" {
   type        = string
   default     = "AWS"
 }
-
-variable "create_free_cluster" {
-  description = "create free cluster by default"
+variable "enable_free_cluster" {
+  description = "enable free cluster by default"
   type        = bool
   default     = true
 }
