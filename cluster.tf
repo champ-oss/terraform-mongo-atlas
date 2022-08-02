@@ -1,8 +1,3 @@
-data "mongodbatlas_cluster" "this" {
-  project_id = mongodbatlas_cluster.this[count.index].project_id
-  name       = mongodbatlas_cluster.this[count.index].name
-}
-
 resource "mongodbatlas_cluster" "this" {
   count      = var.enable_free_cluster ? 1 : 0
   project_id = mongodbatlas_project.this.id
