@@ -25,7 +25,7 @@ resource "mongodbatlas_cluster" "this" {
   disk_size_gb                 = var.disk_size_gb
 
   lifecycle {
-    prevent_destroy = true
+    prevent_destroy = false
     ignore_changes = [
       provider_instance_size_name,
       mongo_db_major_version
