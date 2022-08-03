@@ -11,7 +11,7 @@ resource "mongodbatlas_cluster" "this" {
   cluster_type                = var.cluster_type
 
   dynamic "replication_specs" {
-    for_each = var.replication_specs
+    for_each = var.replication_specs != null ? var.replication_specs : []
     content {
       num_shards = replication_specs.value.num_shards
       zone_name  = replication_specs.value.zone_name
