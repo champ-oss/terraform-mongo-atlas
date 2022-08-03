@@ -8,9 +8,9 @@ resource "mongodbatlas_cloud_provider_snapshot" "this" {
 
 resource "mongodbatlas_cloud_provider_snapshot_restore_job" "this" {
   count        = var.enable_mongo_snapshot && var.target_cluster_name != null && var.target_project_id != null ? 1 : 0
-  project_id   = mongodbatlas_cloud_provider_snapshot.this.project_id
-  cluster_name = mongodbatlas_cloud_provider_snapshot.this.cluster_name
-  snapshot_id  = mongodbatlas_cloud_provider_snapshot.this.snapshot_id
+  project_id   = mongodbatlas_cloud_provider_snapshot.this[0].project_id
+  cluster_name = mongodbatlas_cloud_provider_snapshot.this[0].cluster_name
+  snapshot_id  = mongodbatlas_cloud_provider_snapshot.this[0].snapshot_id
   delivery_type_config {
     automated           = true
     target_cluster_name = var.target_cluster_name
