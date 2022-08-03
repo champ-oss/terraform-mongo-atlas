@@ -105,3 +105,21 @@ variable "replication_specs" {
   type        = list(map(any))
   default     = null
 }
+
+variable "enable_mongo_snapshot" {
+  description = "https://registry.terraform.io/providers/mongodb/mongodbatlas/latest/docs/resources/cloud_provider_snapshot"
+  type        = bool
+  default     = false
+}
+
+variable "target_project_id" {
+  description = "https://registry.terraform.io/providers/mongodb/mongodbatlas/latest/docs/resources/cloud_provider_snapshot_restore_job#project_id"
+  type        = string
+  default     = null
+}
+
+variable "target_cluster_name" {
+  description = "https://registry.terraform.io/providers/mongodb/mongodbatlas/latest/docs/resources/cloud_provider_snapshot_restore_job#target_cluster_name"
+  type        = string
+  default     = null
+}
