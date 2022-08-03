@@ -15,3 +15,4 @@ resource "random_string" "this" {
   lower   = true
   number  = true
 }
+

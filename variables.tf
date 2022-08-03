@@ -21,7 +21,7 @@ variable "cluster_name" {
 variable "provider_instance_size_name" {
   description = "https://registry.terraform.io/providers/mongodb/mongodbatlas/latest/docs/resources/cluster#provider_instance_size_name"
   type        = string
-  default     = "M2"
+  default     = "M0"
 }
 
 variable "mongo_db_major_version" {
@@ -96,10 +96,5 @@ variable "mongo_region" {
 variable "provider_name" {
   description = "Cloud service provider on which the server for a multi-tenant cluster is provisioned. This setting is only valid when providerSetting.providerName is TENANT and providerSetting.instanceSizeName is M2 or M5. The possible values are: AWS, GCP, AZURE"
   type        = string
-  default     = "AWS"
-}
-variable "enable_free_cluster" {
-  description = "enable free cluster by default"
-  type        = bool
-  default     = true
+  default     = ""
 }
