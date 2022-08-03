@@ -59,6 +59,7 @@ variable "disk_size_gb" {
   type        = number
   default     = null
 }
+
 variable "teams" {
   description = "https://registry.terraform.io/providers/mongodb/mongodbatlas/latest/docs/resources/team#name"
   type        = map(any)
@@ -97,4 +98,10 @@ variable "provider_name" {
   description = "Cloud service provider on which the server for a multi-tenant cluster is provisioned. This setting is only valid when providerSetting.providerName is TENANT and providerSetting.instanceSizeName is M2 or M5. The possible values are: AWS, GCP, AZURE"
   type        = string
   default     = ""
+}
+
+variable "replication_specs" {
+  description = "https://registry.terraform.io/providers/mongodb/mongodbatlas/latest/docs/resources/cluster#replication_specs"
+  type        = map(any)
+  default     = null
 }

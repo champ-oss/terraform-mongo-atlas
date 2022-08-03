@@ -10,13 +10,17 @@ resource "mongodbatlas_cluster" "this" {
   mongo_db_major_version      = var.mongo_db_major_version
   cluster_type                = var.cluster_type
 
-  replication_specs {
-    num_shards = 1
-    regions_config {
-      region_name     = var.mongo_region
-      electable_nodes = 3
-      priority        = 7
-      read_only_nodes = 0
+  dynamic "replication_specs" {
+    for_each = var.replication_specs
+    content {
+      num_shards = replication_specs.value.num_shards
+      zone_name  = replication_specs.value.zone_name
+      regions_config {
+        region_name     = replication_specs.value.region_name
+        electable_nodes = replication_specs.value.electable_nodes
+        priority        = replication_specs.value.priority
+        read_only_nodes = replication_specs.value.read_only_nodes
+      }
     }
   }
 
