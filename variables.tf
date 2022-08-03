@@ -102,6 +102,6 @@ variable "provider_name" {
 
 variable "replication_specs" {
   description = "https://registry.terraform.io/providers/mongodb/mongodbatlas/latest/docs/resources/cluster#replication_specs"
-  type        = map(any)
-  default     = {}
+  type        = list(map(any))
+  default     = null
 }
