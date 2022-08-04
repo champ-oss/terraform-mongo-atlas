@@ -11,7 +11,7 @@ resource "mongodbatlas_cloud_backup_snapshot_restore_job" "restore" {
 }
 
 data "mongodbatlas_cloud_backup_snapshot_restore_job" "this" {
-  project_id   = mongodbatlas_cloud_backup_snapshot_restore_job.this.project_id
-  cluster_name = mongodbatlas_cloud_backup_snapshot_restore_job.this.cluster_name
-  job_id       = mongodbatlas_cloud_backup_snapshot_restore_job.this.id
+  project_id   = mongodbatlas_cloud_backup_snapshot_restore_job.this[0].project_id
+  cluster_name = mongodbatlas_cloud_backup_snapshot_restore_job.this[0].cluster_name
+  job_id       = mongodbatlas_cloud_backup_snapshot_restore_job.this[0].id
 }
