@@ -2,7 +2,7 @@ resource "mongodbatlas_cloud_backup_snapshot" "this" {
   count             = var.enable_mongo_snapshot ? 1 : 0
   project_id        = mongodbatlas_cluster.this.project_id
   cluster_name      = mongodbatlas_cluster.this.name
-  description       = "atlas cluster snapshot"
+  description       = "terraform managed cloud backup snapshot and restore"
   retention_in_days = 1
 }
 
