@@ -130,20 +130,8 @@ variable "enable_cluster_restore" {
   default     = false
 }
 
-variable "restore_project_id" {
-  description = ""
-  type        = string
-  default     = null
-}
-
-variable "restore_cluster_name" {
-  description = ""
-  type        = string
-  default     = null
-}
-
 variable "restore_snapshot_id" {
-  description = ""
+  description = "https://registry.terraform.io/providers/mongodb/mongodbatlas/latest/docs/data-sources/cloud_backup_snapshot_restore_job#snapshot_id"
   type        = string
   default     = null
 }
