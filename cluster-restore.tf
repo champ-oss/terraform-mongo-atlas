@@ -3,7 +3,7 @@ resource "mongodbatlas_cloud_backup_snapshot_restore_job" "restore" {
   project_id   = mongodbatlas_cloud_backup_snapshot.this[0].project_id
   cluster_name = mongodbatlas_cloud_backup_snapshot.this[0].cluster_name
   snapshot_id  = var.restore_snapshot_id
-  delivery_type {
+  delivery_type_config {
     automated           = true
     target_cluster_name = mongodbatlas_cloud_backup_snapshot.this[0].cluster_name
     target_project_id   = mongodbatlas_cloud_backup_snapshot.this[0].project_id
