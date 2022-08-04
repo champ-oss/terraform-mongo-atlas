@@ -107,7 +107,13 @@ variable "replication_specs" {
 }
 
 variable "enable_mongo_snapshot_target_restore" {
-  description = "https://registry.terraform.io/providers/mongodb/mongodbatlas/latest/docs/resources/cloud_provider_snapshot"
+  description = "https://registry.terraform.io/providers/mongodb/mongodbatlas/latest/docs/resources/cloud_provider_snapshot_restore_job"
+  type        = bool
+  default     = false
+}
+
+variable "enable_ephemeral_restore" {
+  description = "https://registry.terraform.io/providers/mongodb/mongodbatlas/latest/docs/resources/cloud_provider_snapshot_restore_job"
   type        = bool
   default     = false
 }
@@ -132,6 +138,24 @@ variable "enable_cluster_restore" {
 
 variable "restore_snapshot_id" {
   description = "https://registry.terraform.io/providers/mongodb/mongodbatlas/latest/docs/data-sources/cloud_backup_snapshot_restore_job#snapshot_id"
+  type        = string
+  default     = null
+}
+
+variable "source_snapshot_id" {
+  description = "https://registry.terraform.io/providers/mongodb/mongodbatlas/latest/docs/data-sources/cloud_backup_snapshot_restore_job#snapshot_id"
+  type        = string
+  default     = null
+}
+
+variable "source_project_id" {
+  description = "https://registry.terraform.io/providers/mongodb/mongodbatlas/latest/docs/data-sources/cloud_backup_snapshot_restore_job#project_id"
+  type        = string
+  default     = null
+}
+
+variable "source_cluster_name" {
+  description = "https://registry.terraform.io/providers/mongodb/mongodbatlas/latest/docs/data-sources/cloud_backup_snapshot_restore_job#cluster_name"
   type        = string
   default     = null
 }
