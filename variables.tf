@@ -135,9 +135,3 @@ variable "restore_snapshot_id" {
   type        = string
   default     = null
 }
-
-variable "restore_project_id" {
-  description = "https://registry.terraform.io/providers/mongodb/mongodbatlas/latest/docs/data-sources/cloud_backup_snapshot_restore_job#project_id"
-  type        = string
-  default     = null
-}
