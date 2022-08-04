@@ -10,12 +10,13 @@ module "this" {
   cluster_name = "cluster-name"
   component    = "component-team"
 
-  ## create snapshot from source to target
-  # enable_mongo_snapshot = true
-  # target_project_id     = "123456789"
-  # target_cluster_name   = "clustername"
+  /* create snapshot from source to target
+  enable_mongo_snapshot = true
+  target_project_id     = "123456789"
+  target_cluster_name   = "clustername"
 
-  ## cluster snapshot restore
-  # enable_cluster_restore = true
-  # restore_snapshot_id    = "123456789"
+  cluster snapshot restore
+  enable_cluster_restore = true
+  restore_snapshot_id    = "123456789"
+  */
 }
