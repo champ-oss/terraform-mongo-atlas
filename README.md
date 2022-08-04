@@ -71,6 +71,7 @@ No modules.
 | [mongodbatlas_teams.this](https://registry.terraform.io/providers/mongodb/mongodbatlas/1.4.3/docs/resources/teams) | resource |
 | [random_password.this](https://registry.terraform.io/providers/hashicorp/random/latest/docs/resources/password) | resource |
 | [random_string.this](https://registry.terraform.io/providers/hashicorp/random/latest/docs/resources/string) | resource |
+| [mongodbatlas_cloud_backup_snapshot_restore_job.this](https://registry.terraform.io/providers/mongodb/mongodbatlas/1.4.3/docs/data-sources/cloud_backup_snapshot_restore_job) | data source |
 
 ## Inputs
 
