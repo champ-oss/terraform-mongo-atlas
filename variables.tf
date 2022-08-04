@@ -106,11 +106,12 @@ variable "replication_specs" {
   default     = null
 }
 
-variable "enable_mongo_snapshot" {
+variable "enable_mongo_snapshot_target_restore" {
   description = "https://registry.terraform.io/providers/mongodb/mongodbatlas/latest/docs/resources/cloud_provider_snapshot"
   type        = bool
   default     = false
 }
+
 variable "target_project_id" {
   description = "https://registry.terraform.io/providers/mongodb/mongodbatlas/latest/docs/resources/cloud_provider_snapshot_restore_job#project_id"
   type        = string
@@ -119,6 +120,30 @@ variable "target_project_id" {
 
 variable "target_cluster_name" {
   description = "https://registry.terraform.io/providers/mongodb/mongodbatlas/latest/docs/resources/cloud_provider_snapshot_restore_job#target_cluster_name"
+  type        = string
+  default     = null
+}
+
+variable "enable_cluster_restore" {
+  description = "https://registry.terraform.io/providers/mongodb/mongodbatlas/latest/docs/data-sources/cloud_backup_snapshot_restore_job"
+  type        = bool
+  default     = false
+}
+
+variable "restore_project_id" {
+  description = ""
+  type        = string
+  default     = null
+}
+
+variable "restore_cluster_name" {
+  description = ""
+  type        = string
+  default     = null
+}
+
+variable "restore_snapshot_id" {
+  description = ""
   type        = string
   default     = null
 }
