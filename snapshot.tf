@@ -3,7 +3,6 @@ resource "mongodbatlas_cloud_backup_snapshot" "this" {
   project_id        = mongodbatlas_cluster.this.project_id
   cluster_name      = mongodbatlas_cluster.this.name
   description       = "atlas cluster snapshot"
-  timeout           = "10m"
   retention_in_days = 1
 }
 
