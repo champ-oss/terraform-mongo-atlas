@@ -11,12 +11,11 @@ module "this" {
   component    = "component-team"
 
   /* create snapshot from source to target
-  enable_mongo_snapshot = true
+  enable_ephemeral_restore = true
   target_project_id     = "123456789"
-  target_cluster_name   = "clustername"
 
   cluster snapshot restore
   enable_cluster_restore = true
-  restore_snapshot_id    = "123456789"
+  snapshot_id            = "123456789"
   */
 }
