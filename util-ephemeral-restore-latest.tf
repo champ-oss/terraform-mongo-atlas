@@ -15,7 +15,7 @@ resource "mongodbatlas_cloud_backup_snapshot_restore_job" "ephemeral_restore_lat
   count        = var.enable_ephemeral_restore_latest ? 1 : 0
   project_id   = data.mongodbatlas_cloud_backup_snapshots.this[0].project_id
   cluster_name = data.mongodbatlas_cloud_backup_snapshots.this[0].cluster_name
-  snapshot_id  = data.mongodbatlas_cloud_backup_snapshots.this[0].results[0].snapshot_ids[0]
+  snapshot_id  = data.mongodbatlas_cloud_backup_snapshots.this[0].results[0].id
   delivery_type_config {
     automated           = true
     target_cluster_name = mongodbatlas_cluster.this.name
