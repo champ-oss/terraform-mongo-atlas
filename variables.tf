@@ -130,6 +130,12 @@ variable "target_project_id" {
   default     = null
 }
 
+variable "target_cluster_name" {
+  description = "https://registry.terraform.io/providers/mongodb/mongodbatlas/latest/docs/resources/cloud_provider_snapshot_restore_job#cluster_name"
+  type        = string
+  default     = null
+}
+
 variable "enable_cluster_restore" {
   description = "https://registry.terraform.io/providers/mongodb/mongodbatlas/latest/docs/data-sources/cloud_backup_snapshot_restore_job"
   type        = bool
