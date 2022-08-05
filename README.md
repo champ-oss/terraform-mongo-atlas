@@ -62,6 +62,7 @@ No modules.
 |------|------|
 | [mongodbatlas_cloud_backup_snapshot.this](https://registry.terraform.io/providers/mongodb/mongodbatlas/1.4.3/docs/resources/cloud_backup_snapshot) | resource |
 | [mongodbatlas_cloud_backup_snapshot_restore_job.ephemeral_restore](https://registry.terraform.io/providers/mongodb/mongodbatlas/1.4.3/docs/resources/cloud_backup_snapshot_restore_job) | resource |
+| [mongodbatlas_cloud_backup_snapshot_restore_job.ephemeral_restore_latest](https://registry.terraform.io/providers/mongodb/mongodbatlas/1.4.3/docs/resources/cloud_backup_snapshot_restore_job) | resource |
 | [mongodbatlas_cloud_backup_snapshot_restore_job.restore](https://registry.terraform.io/providers/mongodb/mongodbatlas/1.4.3/docs/resources/cloud_backup_snapshot_restore_job) | resource |
 | [mongodbatlas_cloud_backup_snapshot_restore_job.this](https://registry.terraform.io/providers/mongodb/mongodbatlas/1.4.3/docs/resources/cloud_backup_snapshot_restore_job) | resource |
 | [mongodbatlas_cluster.this](https://registry.terraform.io/providers/mongodb/mongodbatlas/1.4.3/docs/resources/cluster) | resource |
@@ -72,6 +73,7 @@ No modules.
 | [mongodbatlas_teams.this](https://registry.terraform.io/providers/mongodb/mongodbatlas/1.4.3/docs/resources/teams) | resource |
 | [random_password.this](https://registry.terraform.io/providers/hashicorp/random/latest/docs/resources/password) | resource |
 | [random_string.this](https://registry.terraform.io/providers/hashicorp/random/latest/docs/resources/string) | resource |
+| [mongodbatlas_cloud_backup_snapshots.this](https://registry.terraform.io/providers/mongodb/mongodbatlas/1.4.3/docs/data-sources/cloud_backup_snapshots) | data source |
 
 ## Inputs
 
@@ -86,6 +88,7 @@ No modules.
 | <a name="input_disk_size_gb"></a> [disk\_size\_gb](#input\_disk\_size\_gb) | https://registry.terraform.io/providers/mongodb/mongodbatlas/latest/docs/resources/cluster#disk_size_gb | `number` | `null` | no |
 | <a name="input_enable_cluster_restore"></a> [enable\_cluster\_restore](#input\_enable\_cluster\_restore) | https://registry.terraform.io/providers/mongodb/mongodbatlas/latest/docs/data-sources/cloud_backup_snapshot_restore_job | `bool` | `false` | no |
 | <a name="input_enable_ephemeral_restore"></a> [enable\_ephemeral\_restore](#input\_enable\_ephemeral\_restore) | https://registry.terraform.io/providers/mongodb/mongodbatlas/latest/docs/resources/cloud_provider_snapshot_restore_job | `bool` | `false` | no |
+| <a name="input_enable_ephemeral_restore_latest"></a> [enable\_ephemeral\_restore\_latest](#input\_enable\_ephemeral\_restore\_latest) | https://registry.terraform.io/providers/mongodb/mongodbatlas/latest/docs/resources/cloud_provider_snapshot_restore_job | `bool` | `false` | no |
 | <a name="input_enable_mongo_snapshot_target_restore"></a> [enable\_mongo\_snapshot\_target\_restore](#input\_enable\_mongo\_snapshot\_target\_restore) | https://registry.terraform.io/providers/mongodb/mongodbatlas/latest/docs/resources/cloud_provider_snapshot_restore_job | `bool` | `false` | no |
 | <a name="input_existing_teams"></a> [existing\_teams](#input\_existing\_teams) | https://registry.terraform.io/providers/mongodb/mongodbatlas/latest/docs/resources/team#name | `map(any)` | `{}` | no |
 | <a name="input_git"></a> [git](#input\_git) | Name of the Git repo | `string` | n/a | yes |
