@@ -118,6 +118,12 @@ variable "enable_ephemeral_restore" {
   default     = false
 }
 
+variable "enable_ephemeral_restore_latest" {
+  description = "https://registry.terraform.io/providers/mongodb/mongodbatlas/latest/docs/resources/cloud_provider_snapshot_restore_job"
+  type        = bool
+  default     = false
+}
+
 variable "target_project_id" {
   description = "https://registry.terraform.io/providers/mongodb/mongodbatlas/latest/docs/resources/cloud_provider_snapshot_restore_job#project_id"
   type        = string
