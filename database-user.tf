@@ -9,3 +9,4 @@ resource "mongodbatlas_database_user" "this" {
     database_name = "admin"
   }
 }
+

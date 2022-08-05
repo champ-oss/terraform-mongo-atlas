@@ -54,6 +54,12 @@ variable "hour_of_day" {
   default     = 6
 }
 
+variable "disk_size_gb" {
+  description = "https://registry.terraform.io/providers/mongodb/mongodbatlas/latest/docs/resources/cluster#disk_size_gb"
+  type        = number
+  default     = null
+}
+
 variable "teams" {
   description = "https://registry.terraform.io/providers/mongodb/mongodbatlas/latest/docs/resources/team#name"
   type        = map(any)
@@ -64,4 +70,98 @@ variable "existing_teams" {
   description = "https://registry.terraform.io/providers/mongodb/mongodbatlas/latest/docs/resources/team#name"
   type        = map(any)
   default     = {}
+}
+
+variable "auto_scaling_disk_gb_enabled" {
+  description = "https://registry.terraform.io/providers/mongodb/mongodbatlas/latest/docs/resources/cluster#auto_scaling_disk_gb_enabled"
+  type        = bool
+  default     = false
+}
+variable "cloud_backup" {
+  description = "https://registry.terraform.io/providers/mongodb/mongodbatlas/latest/docs/resources/cluster#cloud_backup"
+  type        = bool
+  default     = false
+}
+variable "cluster_type" {
+  description = "https://registry.terraform.io/providers/mongodb/mongodbatlas/latest/docs/resources/cluster#cluster_type"
+  type        = string
+  default     = "REPLICASET"
+}
+
+variable "mongo_region" {
+  description = "https://registry.terraform.io/providers/mongodb/mongodbatlas/latest/docs/resources/cluster#provider_region_name"
+  type        = string
+  default     = "US_EAST_1"
+}
+
+variable "provider_name" {
+  description = "Cloud service provider on which the server for a multi-tenant cluster is provisioned. This setting is only valid when providerSetting.providerName is TENANT and providerSetting.instanceSizeName is M2 or M5. The possible values are: AWS, GCP, AZURE"
+  type        = string
+  default     = ""
+}
+
+variable "replication_specs" {
+  description = "https://registry.terraform.io/providers/mongodb/mongodbatlas/latest/docs/resources/cluster#replication_specs"
+  type        = list(map(any))
+  default     = null
+}
+
+variable "enable_snapshot_target_restore" {
+  description = "https://registry.terraform.io/providers/mongodb/mongodbatlas/latest/docs/resources/cloud_provider_snapshot_restore_job"
+  type        = bool
+  default     = false
+}
+
+variable "enable_ephemeral_restore" {
+  description = "https://registry.terraform.io/providers/mongodb/mongodbatlas/latest/docs/resources/cloud_provider_snapshot_restore_job"
+  type        = bool
+  default     = false
+}
+
+variable "enable_ephemeral_restore_latest" {
+  description = "https://registry.terraform.io/providers/mongodb/mongodbatlas/latest/docs/resources/cloud_provider_snapshot_restore_job"
+  type        = bool
+  default     = false
+}
+
+variable "target_project_id" {
+  description = "https://registry.terraform.io/providers/mongodb/mongodbatlas/latest/docs/resources/cloud_provider_snapshot_restore_job#project_id"
+  type        = string
+  default     = null
+}
+
+variable "target_cluster_name" {
+  description = "https://registry.terraform.io/providers/mongodb/mongodbatlas/latest/docs/resources/cloud_provider_snapshot_restore_job#cluster_name"
+  type        = string
+  default     = null
+}
+
+variable "enable_cluster_restore" {
+  description = "https://registry.terraform.io/providers/mongodb/mongodbatlas/latest/docs/data-sources/cloud_backup_snapshot_restore_job"
+  type        = bool
+  default     = false
+}
+
+variable "snapshot_id" {
+  description = "https://registry.terraform.io/providers/mongodb/mongodbatlas/latest/docs/data-sources/cloud_backup_snapshot_restore_job#snapshot_id"
+  type        = string
+  default     = null
+}
+
+variable "source_snapshot_id" {
+  description = "https://registry.terraform.io/providers/mongodb/mongodbatlas/latest/docs/data-sources/cloud_backup_snapshot_restore_job#snapshot_id"
+  type        = string
+  default     = null
+}
+
+variable "source_backup_project_id" {
+  description = "https://registry.terraform.io/providers/mongodb/mongodbatlas/latest/docs/data-sources/cloud_backup_snapshot_restore_job#project_id"
+  type        = string
+  default     = null
+}
+
+variable "source_backup_latest_project_id" {
+  description = "https://registry.terraform.io/providers/mongodb/mongodbatlas/latest/docs/data-sources/cloud_backup_snapshot_restore_job#project_id"
+  type        = string
+  default     = null
 }
