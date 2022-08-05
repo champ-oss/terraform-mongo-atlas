@@ -22,5 +22,5 @@ resource "mongodbatlas_cloud_backup_snapshot_restore_job" "snapshot_target_resto
     target_cluster_name = data.mongodbatlas_clusters.snapshot_target_restore[0].results[0].name
     target_project_id   = data.mongodbatlas_clusters.snapshot_target_restore[0].project_id
   }
-  depends_on = [mongodbatlas_cloud_backup_snapshot.this]
+  depends_on = [mongodbatlas_cloud_backup_snapshot.snapshot_target_restore]
 }
