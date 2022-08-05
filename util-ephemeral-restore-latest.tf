@@ -1,6 +1,6 @@
 data "mongodbatlas_clusters" "this" {
   count      = var.enable_ephemeral_restore_latest && var.source_project_id != null ? 1 : 0
-  project_id = var.source_project_id // To get dependency.
+  project_id = var.source_project_id
 }
 
 data "mongodbatlas_cloud_backup_snapshots" "this" {
