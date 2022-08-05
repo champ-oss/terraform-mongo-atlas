@@ -5,8 +5,8 @@ data "mongodbatlas_clusters" "ephemeral_restore" {
 
 resource "mongodbatlas_cloud_backup_snapshot_restore_job" "ephemeral_restore" {
   count        = var.enable_ephemeral_restore && var.source_snapshot_id != null ? 1 : 0
-  project_id   = data.mongodbatlas_cloud_backup_snapshots.ephemeral_restore[0].project_id
-  cluster_name = data.mongodbatlas_cloud_backup_snapshots.ephemeral_restore[0].cluster_name
+  project_id   = data.mongodbatlas_clusters.ephemeral_restore[0].project_id
+  cluster_name = data.mongodbatlas_clusters.ephemeral_restore[0].results[0].name
   snapshot_id  = var.source_snapshot_id
   delivery_type_config {
     automated           = true
