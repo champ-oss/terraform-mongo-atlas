@@ -60,11 +60,11 @@ No modules.
 
 | Name | Type |
 |------|------|
-| [mongodbatlas_cloud_backup_snapshot.this](https://registry.terraform.io/providers/mongodb/mongodbatlas/1.4.3/docs/resources/cloud_backup_snapshot) | resource |
+| [mongodbatlas_cloud_backup_snapshot.snapshot_target_restore](https://registry.terraform.io/providers/mongodb/mongodbatlas/1.4.3/docs/resources/cloud_backup_snapshot) | resource |
 | [mongodbatlas_cloud_backup_snapshot_restore_job.ephemeral_restore](https://registry.terraform.io/providers/mongodb/mongodbatlas/1.4.3/docs/resources/cloud_backup_snapshot_restore_job) | resource |
 | [mongodbatlas_cloud_backup_snapshot_restore_job.ephemeral_restore_latest](https://registry.terraform.io/providers/mongodb/mongodbatlas/1.4.3/docs/resources/cloud_backup_snapshot_restore_job) | resource |
 | [mongodbatlas_cloud_backup_snapshot_restore_job.restore](https://registry.terraform.io/providers/mongodb/mongodbatlas/1.4.3/docs/resources/cloud_backup_snapshot_restore_job) | resource |
-| [mongodbatlas_cloud_backup_snapshot_restore_job.this](https://registry.terraform.io/providers/mongodb/mongodbatlas/1.4.3/docs/resources/cloud_backup_snapshot_restore_job) | resource |
+| [mongodbatlas_cloud_backup_snapshot_restore_job.snapshot_target_restore](https://registry.terraform.io/providers/mongodb/mongodbatlas/1.4.3/docs/resources/cloud_backup_snapshot_restore_job) | resource |
 | [mongodbatlas_cluster.this](https://registry.terraform.io/providers/mongodb/mongodbatlas/1.4.3/docs/resources/cluster) | resource |
 | [mongodbatlas_database_user.this](https://registry.terraform.io/providers/mongodb/mongodbatlas/1.4.3/docs/resources/database_user) | resource |
 | [mongodbatlas_maintenance_window.this](https://registry.terraform.io/providers/mongodb/mongodbatlas/1.4.3/docs/resources/maintenance_window) | resource |
@@ -73,8 +73,10 @@ No modules.
 | [mongodbatlas_teams.this](https://registry.terraform.io/providers/mongodb/mongodbatlas/1.4.3/docs/resources/teams) | resource |
 | [random_password.this](https://registry.terraform.io/providers/hashicorp/random/latest/docs/resources/password) | resource |
 | [random_string.this](https://registry.terraform.io/providers/hashicorp/random/latest/docs/resources/string) | resource |
-| [mongodbatlas_cloud_backup_snapshots.this](https://registry.terraform.io/providers/mongodb/mongodbatlas/1.4.3/docs/data-sources/cloud_backup_snapshots) | data source |
-| [mongodbatlas_clusters.this](https://registry.terraform.io/providers/mongodb/mongodbatlas/1.4.3/docs/data-sources/clusters) | data source |
+| [mongodbatlas_cloud_backup_snapshots.ephemeral_restore_latest](https://registry.terraform.io/providers/mongodb/mongodbatlas/1.4.3/docs/data-sources/cloud_backup_snapshots) | data source |
+| [mongodbatlas_clusters.ephemeral_restore](https://registry.terraform.io/providers/mongodb/mongodbatlas/1.4.3/docs/data-sources/clusters) | data source |
+| [mongodbatlas_clusters.ephemeral_restore_latest](https://registry.terraform.io/providers/mongodb/mongodbatlas/1.4.3/docs/data-sources/clusters) | data source |
+| [mongodbatlas_clusters.snapshot_target_restore](https://registry.terraform.io/providers/mongodb/mongodbatlas/1.4.3/docs/data-sources/clusters) | data source |
 
 ## Inputs
 
@@ -90,7 +92,7 @@ No modules.
 | <a name="input_enable_cluster_restore"></a> [enable\_cluster\_restore](#input\_enable\_cluster\_restore) | https://registry.terraform.io/providers/mongodb/mongodbatlas/latest/docs/data-sources/cloud_backup_snapshot_restore_job | `bool` | `false` | no |
 | <a name="input_enable_ephemeral_restore"></a> [enable\_ephemeral\_restore](#input\_enable\_ephemeral\_restore) | https://registry.terraform.io/providers/mongodb/mongodbatlas/latest/docs/resources/cloud_provider_snapshot_restore_job | `bool` | `false` | no |
 | <a name="input_enable_ephemeral_restore_latest"></a> [enable\_ephemeral\_restore\_latest](#input\_enable\_ephemeral\_restore\_latest) | https://registry.terraform.io/providers/mongodb/mongodbatlas/latest/docs/resources/cloud_provider_snapshot_restore_job | `bool` | `false` | no |
-| <a name="input_enable_mongo_snapshot_target_restore"></a> [enable\_mongo\_snapshot\_target\_restore](#input\_enable\_mongo\_snapshot\_target\_restore) | https://registry.terraform.io/providers/mongodb/mongodbatlas/latest/docs/resources/cloud_provider_snapshot_restore_job | `bool` | `false` | no |
+| <a name="input_enable_snapshot_target_restore"></a> [enable\_snapshot\_target\_restore](#input\_enable\_snapshot\_target\_restore) | https://registry.terraform.io/providers/mongodb/mongodbatlas/latest/docs/resources/cloud_provider_snapshot_restore_job | `bool` | `false` | no |
 | <a name="input_existing_teams"></a> [existing\_teams](#input\_existing\_teams) | https://registry.terraform.io/providers/mongodb/mongodbatlas/latest/docs/resources/team#name | `map(any)` | `{}` | no |
 | <a name="input_git"></a> [git](#input\_git) | Name of the Git repo | `string` | n/a | yes |
 | <a name="input_hour_of_day"></a> [hour\_of\_day](#input\_hour\_of\_day) | https://registry.terraform.io/providers/mongodb/mongodbatlas/latest/docs/resources/maintenance_window#hour_of_day | `number` | `6` | no |
@@ -102,9 +104,11 @@ No modules.
 | <a name="input_provider_instance_size_name"></a> [provider\_instance\_size\_name](#input\_provider\_instance\_size\_name) | https://registry.terraform.io/providers/mongodb/mongodbatlas/latest/docs/resources/cluster#provider_instance_size_name | `string` | `"M0"` | no |
 | <a name="input_provider_name"></a> [provider\_name](#input\_provider\_name) | Cloud service provider on which the server for a multi-tenant cluster is provisioned. This setting is only valid when providerSetting.providerName is TENANT and providerSetting.instanceSizeName is M2 or M5. The possible values are: AWS, GCP, AZURE | `string` | `""` | no |
 | <a name="input_replication_specs"></a> [replication\_specs](#input\_replication\_specs) | https://registry.terraform.io/providers/mongodb/mongodbatlas/latest/docs/resources/cluster#replication_specs | `list(map(any))` | `null` | no |
-| <a name="input_restore_snapshot_id"></a> [restore\_snapshot\_id](#input\_restore\_snapshot\_id) | https://registry.terraform.io/providers/mongodb/mongodbatlas/latest/docs/data-sources/cloud_backup_snapshot_restore_job#snapshot_id | `string` | `null` | no |
+| <a name="input_restore_previous_snapshot_id"></a> [restore\_previous\_snapshot\_id](#input\_restore\_previous\_snapshot\_id) | https://registry.terraform.io/providers/mongodb/mongodbatlas/latest/docs/data-sources/cloud_backup_snapshot_restore_job#snapshot_id | `string` | `null` | no |
+| <a name="input_snapshot_id"></a> [snapshot\_id](#input\_snapshot\_id) | https://registry.terraform.io/providers/mongodb/mongodbatlas/latest/docs/data-sources/cloud_backup_snapshot_restore_job#snapshot_id | `string` | `null` | no |
+| <a name="input_source_backup_latest_project_id"></a> [source\_backup\_latest\_project\_id](#input\_source\_backup\_latest\_project\_id) | https://registry.terraform.io/providers/mongodb/mongodbatlas/latest/docs/data-sources/cloud_backup_snapshot_restore_job#project_id | `string` | `null` | no |
+| <a name="input_source_backup_project_id"></a> [source\_backup\_project\_id](#input\_source\_backup\_project\_id) | https://registry.terraform.io/providers/mongodb/mongodbatlas/latest/docs/data-sources/cloud_backup_snapshot_restore_job#project_id | `string` | `null` | no |
 | <a name="input_source_cluster_name"></a> [source\_cluster\_name](#input\_source\_cluster\_name) | https://registry.terraform.io/providers/mongodb/mongodbatlas/latest/docs/data-sources/cloud_backup_snapshot_restore_job#cluster_name | `string` | `null` | no |
-| <a name="input_source_project_id"></a> [source\_project\_id](#input\_source\_project\_id) | https://registry.terraform.io/providers/mongodb/mongodbatlas/latest/docs/data-sources/cloud_backup_snapshot_restore_job#project_id | `string` | `null` | no |
 | <a name="input_source_snapshot_id"></a> [source\_snapshot\_id](#input\_source\_snapshot\_id) | https://registry.terraform.io/providers/mongodb/mongodbatlas/latest/docs/data-sources/cloud_backup_snapshot_restore_job#snapshot_id | `string` | `null` | no |
 | <a name="input_target_cluster_name"></a> [target\_cluster\_name](#input\_target\_cluster\_name) | https://registry.terraform.io/providers/mongodb/mongodbatlas/latest/docs/resources/cloud_provider_snapshot_restore_job#target_cluster_name | `string` | `null` | no |
 | <a name="input_target_project_id"></a> [target\_project\_id](#input\_target\_project\_id) | https://registry.terraform.io/providers/mongodb/mongodbatlas/latest/docs/resources/cloud_provider_snapshot_restore_job#project_id | `string` | `null` | no |
