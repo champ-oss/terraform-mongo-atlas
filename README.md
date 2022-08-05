@@ -76,7 +76,6 @@ No modules.
 | [mongodbatlas_cloud_backup_snapshots.ephemeral_restore_latest](https://registry.terraform.io/providers/mongodb/mongodbatlas/1.4.3/docs/data-sources/cloud_backup_snapshots) | data source |
 | [mongodbatlas_clusters.ephemeral_restore](https://registry.terraform.io/providers/mongodb/mongodbatlas/1.4.3/docs/data-sources/clusters) | data source |
 | [mongodbatlas_clusters.ephemeral_restore_latest](https://registry.terraform.io/providers/mongodb/mongodbatlas/1.4.3/docs/data-sources/clusters) | data source |
-| [mongodbatlas_clusters.snapshot_target_restore](https://registry.terraform.io/providers/mongodb/mongodbatlas/1.4.3/docs/data-sources/clusters) | data source |
 
 ## Inputs
 
@@ -108,6 +107,7 @@ No modules.
 | <a name="input_source_backup_latest_project_id"></a> [source\_backup\_latest\_project\_id](#input\_source\_backup\_latest\_project\_id) | https://registry.terraform.io/providers/mongodb/mongodbatlas/latest/docs/data-sources/cloud_backup_snapshot_restore_job#project_id | `string` | `null` | no |
 | <a name="input_source_backup_project_id"></a> [source\_backup\_project\_id](#input\_source\_backup\_project\_id) | https://registry.terraform.io/providers/mongodb/mongodbatlas/latest/docs/data-sources/cloud_backup_snapshot_restore_job#project_id | `string` | `null` | no |
 | <a name="input_source_snapshot_id"></a> [source\_snapshot\_id](#input\_source\_snapshot\_id) | https://registry.terraform.io/providers/mongodb/mongodbatlas/latest/docs/data-sources/cloud_backup_snapshot_restore_job#snapshot_id | `string` | `null` | no |
+| <a name="input_target_cluster_name"></a> [target\_cluster\_name](#input\_target\_cluster\_name) | https://registry.terraform.io/providers/mongodb/mongodbatlas/latest/docs/resources/cloud_provider_snapshot_restore_job#cluster_name | `string` | `null` | no |
 | <a name="input_target_project_id"></a> [target\_project\_id](#input\_target\_project\_id) | https://registry.terraform.io/providers/mongodb/mongodbatlas/latest/docs/resources/cloud_provider_snapshot_restore_job#project_id | `string` | `null` | no |
 | <a name="input_teams"></a> [teams](#input\_teams) | https://registry.terraform.io/providers/mongodb/mongodbatlas/latest/docs/resources/team#name | `map(any)` | `{}` | no |
 
