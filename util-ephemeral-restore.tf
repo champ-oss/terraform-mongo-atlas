@@ -1,6 +1,6 @@
 data "mongodbatlas_clusters" "ephemeral_restore" {
-  count      = var.enable_ephemeral_restore && var.source_backup_project_id != null ? 1 : 0
-  project_id = var.source_backup_project_id
+  count      = var.enable_ephemeral_restore && var.source_project_id != null ? 1 : 0
+  project_id = var.source_project_id
 }
 
 resource "mongodbatlas_cloud_backup_snapshot_restore_job" "ephemeral_restore" {

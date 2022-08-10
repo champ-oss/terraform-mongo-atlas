@@ -16,6 +16,13 @@ variable "org_id" {
 variable "cluster_name" {
   description = "https://registry.terraform.io/providers/mongodb/mongodbatlas/latest/docs/resources/cluster#name"
   type        = string
+  default     = null
+}
+
+variable "target_cluster_name" {
+  description = "https://registry.terraform.io/providers/mongodb/mongodbatlas/latest/docs/resources/cluster#name"
+  type        = string
+  default     = null
 }
 
 variable "provider_instance_size_name" {
@@ -124,14 +131,14 @@ variable "enable_ephemeral_restore_latest" {
   default     = false
 }
 
-variable "target_project_id" {
+variable "source_project_id" {
   description = "https://registry.terraform.io/providers/mongodb/mongodbatlas/latest/docs/resources/cloud_provider_snapshot_restore_job#project_id"
   type        = string
   default     = null
 }
 
-variable "target_cluster_name" {
-  description = "https://registry.terraform.io/providers/mongodb/mongodbatlas/latest/docs/resources/cloud_provider_snapshot_restore_job#cluster_name"
+variable "target_project_id" {
+  description = "https://registry.terraform.io/providers/mongodb/mongodbatlas/latest/docs/resources/cloud_provider_snapshot_restore_job#project_id"
   type        = string
   default     = null
 }
@@ -142,26 +149,8 @@ variable "enable_cluster_restore" {
   default     = false
 }
 
-variable "snapshot_id" {
-  description = "https://registry.terraform.io/providers/mongodb/mongodbatlas/latest/docs/data-sources/cloud_backup_snapshot_restore_job#snapshot_id"
-  type        = string
-  default     = null
-}
-
 variable "source_snapshot_id" {
   description = "https://registry.terraform.io/providers/mongodb/mongodbatlas/latest/docs/data-sources/cloud_backup_snapshot_restore_job#snapshot_id"
-  type        = string
-  default     = null
-}
-
-variable "source_backup_project_id" {
-  description = "https://registry.terraform.io/providers/mongodb/mongodbatlas/latest/docs/data-sources/cloud_backup_snapshot_restore_job#project_id"
-  type        = string
-  default     = null
-}
-
-variable "source_backup_latest_project_id" {
-  description = "https://registry.terraform.io/providers/mongodb/mongodbatlas/latest/docs/data-sources/cloud_backup_snapshot_restore_job#project_id"
   type        = string
   default     = null
 }

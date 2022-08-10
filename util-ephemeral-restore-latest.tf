@@ -1,6 +1,6 @@
 data "mongodbatlas_clusters" "ephemeral_restore_latest" {
-  count      = var.enable_ephemeral_restore_latest && var.source_backup_latest_project_id != null ? 1 : 0
-  project_id = var.source_backup_latest_project_id
+  count      = var.enable_ephemeral_restore_latest && var.source_project_id != null ? 1 : 0
+  project_id = var.source_project_id
 }
 
 data "mongodbatlas_cloud_backup_snapshots" "ephemeral_restore_latest" {
