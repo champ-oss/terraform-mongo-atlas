@@ -29,6 +29,7 @@ Summary: nosql mongo atlas resources
 * project allow network cidr list
 * manage mongo project teams
 * set default maintenance window
+* adding a few utility resources to manage snapshots and restore for new and existing clusters
 
 ## Documentation
 
