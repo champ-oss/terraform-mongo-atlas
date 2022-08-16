@@ -29,6 +29,7 @@ Summary: nosql mongo atlas resources
 * project allow network cidr list
 * manage mongo project teams
 * set default maintenance window
+* adding a few utility resources to manage snapshots and restore for new and existing clusters
 
 ## Documentation
 
@@ -83,7 +84,7 @@ No modules.
 |------|-------------|------|---------|:--------:|
 | <a name="input_auto_scaling_disk_gb_enabled"></a> [auto\_scaling\_disk\_gb\_enabled](#input\_auto\_scaling\_disk\_gb\_enabled) | https://registry.terraform.io/providers/mongodb/mongodbatlas/latest/docs/resources/cluster#auto_scaling_disk_gb_enabled | `bool` | `false` | no |
 | <a name="input_cloud_backup"></a> [cloud\_backup](#input\_cloud\_backup) | https://registry.terraform.io/providers/mongodb/mongodbatlas/latest/docs/resources/cluster#cloud_backup | `bool` | `false` | no |
-| <a name="input_cluster_name"></a> [cluster\_name](#input\_cluster\_name) | https://registry.terraform.io/providers/mongodb/mongodbatlas/latest/docs/resources/cluster#name | `string` | n/a | yes |
+| <a name="input_cluster_name"></a> [cluster\_name](#input\_cluster\_name) | https://registry.terraform.io/providers/mongodb/mongodbatlas/latest/docs/resources/cluster#name | `string` | `null` | no |
 | <a name="input_cluster_type"></a> [cluster\_type](#input\_cluster\_type) | https://registry.terraform.io/providers/mongodb/mongodbatlas/latest/docs/resources/cluster#cluster_type | `string` | `"REPLICASET"` | no |
 | <a name="input_component"></a> [component](#input\_component) | team name prefix | `string` | `"team"` | no |
 | <a name="input_day_of_week"></a> [day\_of\_week](#input\_day\_of\_week) | https://registry.terraform.io/providers/mongodb/mongodbatlas/latest/docs/resources/maintenance_window#day_of_week | `number` | `1` | no |
@@ -103,11 +104,9 @@ No modules.
 | <a name="input_provider_instance_size_name"></a> [provider\_instance\_size\_name](#input\_provider\_instance\_size\_name) | https://registry.terraform.io/providers/mongodb/mongodbatlas/latest/docs/resources/cluster#provider_instance_size_name | `string` | `"M0"` | no |
 | <a name="input_provider_name"></a> [provider\_name](#input\_provider\_name) | Cloud service provider on which the server for a multi-tenant cluster is provisioned. This setting is only valid when providerSetting.providerName is TENANT and providerSetting.instanceSizeName is M2 or M5. The possible values are: AWS, GCP, AZURE | `string` | `""` | no |
 | <a name="input_replication_specs"></a> [replication\_specs](#input\_replication\_specs) | https://registry.terraform.io/providers/mongodb/mongodbatlas/latest/docs/resources/cluster#replication_specs | `list(map(any))` | `null` | no |
-| <a name="input_snapshot_id"></a> [snapshot\_id](#input\_snapshot\_id) | https://registry.terraform.io/providers/mongodb/mongodbatlas/latest/docs/data-sources/cloud_backup_snapshot_restore_job#snapshot_id | `string` | `null` | no |
-| <a name="input_source_backup_latest_project_id"></a> [source\_backup\_latest\_project\_id](#input\_source\_backup\_latest\_project\_id) | https://registry.terraform.io/providers/mongodb/mongodbatlas/latest/docs/data-sources/cloud_backup_snapshot_restore_job#project_id | `string` | `null` | no |
-| <a name="input_source_backup_project_id"></a> [source\_backup\_project\_id](#input\_source\_backup\_project\_id) | https://registry.terraform.io/providers/mongodb/mongodbatlas/latest/docs/data-sources/cloud_backup_snapshot_restore_job#project_id | `string` | `null` | no |
+| <a name="input_source_project_id"></a> [source\_project\_id](#input\_source\_project\_id) | https://registry.terraform.io/providers/mongodb/mongodbatlas/latest/docs/resources/cloud_provider_snapshot_restore_job#project_id | `string` | `null` | no |
 | <a name="input_source_snapshot_id"></a> [source\_snapshot\_id](#input\_source\_snapshot\_id) | https://registry.terraform.io/providers/mongodb/mongodbatlas/latest/docs/data-sources/cloud_backup_snapshot_restore_job#snapshot_id | `string` | `null` | no |
-| <a name="input_target_cluster_name"></a> [target\_cluster\_name](#input\_target\_cluster\_name) | https://registry.terraform.io/providers/mongodb/mongodbatlas/latest/docs/resources/cloud_provider_snapshot_restore_job#cluster_name | `string` | `null` | no |
+| <a name="input_target_cluster_name"></a> [target\_cluster\_name](#input\_target\_cluster\_name) | https://registry.terraform.io/providers/mongodb/mongodbatlas/latest/docs/resources/cluster#name | `string` | `null` | no |
 | <a name="input_target_project_id"></a> [target\_project\_id](#input\_target\_project\_id) | https://registry.terraform.io/providers/mongodb/mongodbatlas/latest/docs/resources/cloud_provider_snapshot_restore_job#project_id | `string` | `null` | no |
 | <a name="input_teams"></a> [teams](#input\_teams) | https://registry.terraform.io/providers/mongodb/mongodbatlas/latest/docs/resources/team#name | `map(any)` | `{}` | no |
 
@@ -123,4 +122,4 @@ No modules.
 <!-- END_TF_DOCS -->
 
 ## Project Status
-Project is: _complete_ 
+Project is: _in_progress_ 

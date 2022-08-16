@@ -10,21 +10,41 @@ module "this" {
   cluster_name = "cluster-name"
   component    = "component-team"
 
-  /* update current cluster with certain snapshot id
+  /*
+  replication specs not available with free tier, example below
+  replication_specs = [{
+    num_shards : 1,
+    zone_name: "ZONE 2 managed by terraform",
+    region_name : "US_EAST_2",
+    electable_nodes : 3,
+    priority : 7,
+    read_only_nodes : 0
+  }]
+  following key:value not available with free tier, dedicated example below
+  disk_size_gb                 = 10
+  cloud_backup                 = true
+  auto_scaling_disk_gb_enabled = false
+
+  provider_instance_size_name   = "M10"
+  provider_name                 = "AWS"
+  mongo_region                  = "US_EAST_2"
+
+  update current cluster with certain snapshot id
   enable_cluster_restore = true
-  snapshot_id            = "12344"
+  source_snapshot_id     = "12344"
 
   update new env with certain snapshot id from another project
   enable_ephemeral_restore = true
-  source_backup_project_id = "12345"
+  source_project_id        = "12345"
   source_snapshot_id       = "1234"
 
   update new env with latest snapshot id from project
   enable_ephemeral_restore_latest = true
-  source_backup_latest_project_id = "12345"
+  source_project_id               = "12345"
 
   create snapshot and restore on target project
   enable_snapshot_target_restore = true
   target_project_id              = "12345"
+  target_cluster_name            = "blah"
   */
 }
