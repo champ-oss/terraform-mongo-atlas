@@ -44,13 +44,13 @@ terraform mongo atlas provider resource documentation  [_here_](https://registry
 
 | Name | Version |
 |------|---------|
-| <a name="requirement_mongodbatlas"></a> [mongodbatlas](#requirement\_mongodbatlas) | 1.4.3 |
+| <a name="requirement_mongodbatlas"></a> [mongodbatlas](#requirement\_mongodbatlas) | 1.4.4 |
 
 ## Providers
 
 | Name | Version |
 |------|---------|
-| <a name="provider_mongodbatlas"></a> [mongodbatlas](#provider\_mongodbatlas) | 1.4.3 |
+| <a name="provider_mongodbatlas"></a> [mongodbatlas](#provider\_mongodbatlas) | 1.4.4 |
 | <a name="provider_random"></a> [random](#provider\_random) | n/a |
 
 ## Modules
@@ -61,22 +61,22 @@ No modules.
 
 | Name | Type |
 |------|------|
-| [mongodbatlas_cloud_backup_snapshot.snapshot_target_restore](https://registry.terraform.io/providers/mongodb/mongodbatlas/1.4.3/docs/resources/cloud_backup_snapshot) | resource |
-| [mongodbatlas_cloud_backup_snapshot_restore_job.ephemeral_restore](https://registry.terraform.io/providers/mongodb/mongodbatlas/1.4.3/docs/resources/cloud_backup_snapshot_restore_job) | resource |
-| [mongodbatlas_cloud_backup_snapshot_restore_job.ephemeral_restore_latest](https://registry.terraform.io/providers/mongodb/mongodbatlas/1.4.3/docs/resources/cloud_backup_snapshot_restore_job) | resource |
-| [mongodbatlas_cloud_backup_snapshot_restore_job.restore](https://registry.terraform.io/providers/mongodb/mongodbatlas/1.4.3/docs/resources/cloud_backup_snapshot_restore_job) | resource |
-| [mongodbatlas_cloud_backup_snapshot_restore_job.snapshot_target_restore](https://registry.terraform.io/providers/mongodb/mongodbatlas/1.4.3/docs/resources/cloud_backup_snapshot_restore_job) | resource |
-| [mongodbatlas_cluster.this](https://registry.terraform.io/providers/mongodb/mongodbatlas/1.4.3/docs/resources/cluster) | resource |
-| [mongodbatlas_database_user.this](https://registry.terraform.io/providers/mongodb/mongodbatlas/1.4.3/docs/resources/database_user) | resource |
-| [mongodbatlas_maintenance_window.this](https://registry.terraform.io/providers/mongodb/mongodbatlas/1.4.3/docs/resources/maintenance_window) | resource |
-| [mongodbatlas_project.this](https://registry.terraform.io/providers/mongodb/mongodbatlas/1.4.3/docs/resources/project) | resource |
-| [mongodbatlas_project_ip_access_list.this](https://registry.terraform.io/providers/mongodb/mongodbatlas/1.4.3/docs/resources/project_ip_access_list) | resource |
-| [mongodbatlas_teams.this](https://registry.terraform.io/providers/mongodb/mongodbatlas/1.4.3/docs/resources/teams) | resource |
+| [mongodbatlas_cloud_backup_snapshot.snapshot_target_restore](https://registry.terraform.io/providers/mongodb/mongodbatlas/1.4.4/docs/resources/cloud_backup_snapshot) | resource |
+| [mongodbatlas_cloud_backup_snapshot_restore_job.ephemeral_restore](https://registry.terraform.io/providers/mongodb/mongodbatlas/1.4.4/docs/resources/cloud_backup_snapshot_restore_job) | resource |
+| [mongodbatlas_cloud_backup_snapshot_restore_job.ephemeral_restore_latest](https://registry.terraform.io/providers/mongodb/mongodbatlas/1.4.4/docs/resources/cloud_backup_snapshot_restore_job) | resource |
+| [mongodbatlas_cloud_backup_snapshot_restore_job.restore](https://registry.terraform.io/providers/mongodb/mongodbatlas/1.4.4/docs/resources/cloud_backup_snapshot_restore_job) | resource |
+| [mongodbatlas_cloud_backup_snapshot_restore_job.snapshot_target_restore](https://registry.terraform.io/providers/mongodb/mongodbatlas/1.4.4/docs/resources/cloud_backup_snapshot_restore_job) | resource |
+| [mongodbatlas_cluster.this](https://registry.terraform.io/providers/mongodb/mongodbatlas/1.4.4/docs/resources/cluster) | resource |
+| [mongodbatlas_database_user.this](https://registry.terraform.io/providers/mongodb/mongodbatlas/1.4.4/docs/resources/database_user) | resource |
+| [mongodbatlas_maintenance_window.this](https://registry.terraform.io/providers/mongodb/mongodbatlas/1.4.4/docs/resources/maintenance_window) | resource |
+| [mongodbatlas_project.this](https://registry.terraform.io/providers/mongodb/mongodbatlas/1.4.4/docs/resources/project) | resource |
+| [mongodbatlas_project_ip_access_list.this](https://registry.terraform.io/providers/mongodb/mongodbatlas/1.4.4/docs/resources/project_ip_access_list) | resource |
+| [mongodbatlas_teams.this](https://registry.terraform.io/providers/mongodb/mongodbatlas/1.4.4/docs/resources/teams) | resource |
 | [random_password.this](https://registry.terraform.io/providers/hashicorp/random/latest/docs/resources/password) | resource |
 | [random_string.this](https://registry.terraform.io/providers/hashicorp/random/latest/docs/resources/string) | resource |
-| [mongodbatlas_cloud_backup_snapshots.ephemeral_restore_latest](https://registry.terraform.io/providers/mongodb/mongodbatlas/1.4.3/docs/data-sources/cloud_backup_snapshots) | data source |
-| [mongodbatlas_clusters.ephemeral_restore](https://registry.terraform.io/providers/mongodb/mongodbatlas/1.4.3/docs/data-sources/clusters) | data source |
-| [mongodbatlas_clusters.ephemeral_restore_latest](https://registry.terraform.io/providers/mongodb/mongodbatlas/1.4.3/docs/data-sources/clusters) | data source |
+| [mongodbatlas_cloud_backup_snapshots.ephemeral_restore_latest](https://registry.terraform.io/providers/mongodb/mongodbatlas/1.4.4/docs/data-sources/cloud_backup_snapshots) | data source |
+| [mongodbatlas_clusters.ephemeral_restore](https://registry.terraform.io/providers/mongodb/mongodbatlas/1.4.4/docs/data-sources/clusters) | data source |
+| [mongodbatlas_clusters.ephemeral_restore_latest](https://registry.terraform.io/providers/mongodb/mongodbatlas/1.4.4/docs/data-sources/clusters) | data source |
 
 ## Inputs
 
