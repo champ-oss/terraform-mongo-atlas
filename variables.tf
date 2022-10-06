@@ -82,13 +82,15 @@ variable "existing_teams" {
 variable "auto_scaling_disk_gb_enabled" {
   description = "https://registry.terraform.io/providers/mongodb/mongodbatlas/latest/docs/resources/cluster#auto_scaling_disk_gb_enabled"
   type        = bool
-  default     = false
+  default     = null
 }
+
 variable "cloud_backup" {
   description = "https://registry.terraform.io/providers/mongodb/mongodbatlas/latest/docs/resources/cluster#cloud_backup"
   type        = bool
-  default     = false
+  default     = null
 }
+
 variable "cluster_type" {
   description = "https://registry.terraform.io/providers/mongodb/mongodbatlas/latest/docs/resources/cluster#cluster_type"
   type        = string
