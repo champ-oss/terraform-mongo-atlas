@@ -14,7 +14,7 @@ import (
 
 // TestExamplesComplete tests a typical deployment of this module. It will verify the SSM parameter is set correctly
 // and that snapshots are all working as expected.
-func TestExamplesShared(t *testing.T) {
+func TestExamplesCluster(t *testing.T) {
 	fmt.Println("start test----------")
 	t.Parallel()
 
