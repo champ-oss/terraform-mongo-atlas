@@ -4,7 +4,7 @@ locals {
 
 module "this" {
   source       = "../../"
-  project_name = "project-example"
+  project_name = "shared-example"
   git          = local.git
   org_id       = var.org_id
   cluster_name = "cluster-name"
