@@ -7,7 +7,7 @@ module "dedicated" {
   project_name                = "dedicated-example"
   git                         = local.git
   org_id                      = var.org_id
-  cluster_name                = "cluster-name"
+  cluster_name                = "cluster-name-dedicated"
   provider_instance_size_name = "M10"
   replication_specs = [{
     num_shards : 1,
