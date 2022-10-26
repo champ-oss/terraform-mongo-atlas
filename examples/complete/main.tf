@@ -9,7 +9,7 @@ module "this" {
   org_id                      = var.org_id
   cluster_name                = "cluster-name"
   provider_instance_size_name = "M10"
-  replication_specs           = [
+  replication_specs = [
     {
       num_shards : 1,
       zone_name : "ZONE 2 managed by terraform",
