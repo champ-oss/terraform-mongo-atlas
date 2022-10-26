@@ -2,7 +2,7 @@ locals {
   git = "terraform-mongo-atlas"
 }
 
-module "this" {
+module "dedicated" {
   source                      = "../../"
   project_name                = "dedicated-example"
   git                         = local.git

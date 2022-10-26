@@ -3,12 +3,13 @@ locals {
 }
 
 module "this" {
-  source       = "../../"
-  project_name = "shared-example"
-  git          = local.git
-  org_id       = var.org_id
-  cluster_name = "cluster-name"
-  component    = "component-team"
+  source                 = "../../"
+  project_name           = "shared-example"
+  git                    = local.git
+  org_id                 = var.org_id
+  cluster_name           = "cluster-name"
+  component              = "component-team"
+  mongo_db_major_version = "5.0"
 
   /*
   replication specs not available with free tier, example below
