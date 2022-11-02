@@ -11,6 +11,14 @@ data "mongodbatlas_cloud_backup_snapshots" "ephemeral_restore_latest" {
   items_per_page = 1
 }
 
+data "mongodbatlas_cloud_backup_snapshot_restore_jobs" "ephemeral_restore_latest" {
+  count          = var.enable_ephemeral_restore_latest ? 1 : 0
+  project_id     = mongodbatlas_cloud_backup_snapshot_restore_job.ephemeral_restore_latest[0].project_id
+  cluster_name   = mongodbatlas_cloud_backup_snapshot_restore_job.ephemeral_restore_latest[0].cluster_name
+  page_num       = 1
+  items_per_page = 1
+}
+
 resource "mongodbatlas_cloud_backup_snapshot_restore_job" "ephemeral_restore_latest" {
   count        = var.enable_ephemeral_restore_latest ? 1 : 0
   project_id   = data.mongodbatlas_cloud_backup_snapshots.ephemeral_restore_latest[0].project_id
