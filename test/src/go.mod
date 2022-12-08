@@ -4,7 +4,7 @@ go 1.17
 
 require (
 	github.com/gruntwork-io/terratest v0.40.24
-	go.mongodb.org/mongo-driver v1.11.0
+	go.mongodb.org/mongo-driver v1.11.1
 )
 
 require (
