@@ -14,8 +14,7 @@ data "mongodbatlas_cloud_backup_snapshots" "ephemeral_restore_latest" {
 data "mongodbatlas_cloud_backup_snapshot_restore_job" "this" {
   project_id   = data.mongodbatlas_clusters.ephemeral_restore_latest[0].project_id
   cluster_name = data.mongodbatlas_clusters.ephemeral_restore_latest[0].results[0].name
-  job_id       = data.mongodbatlas_clusters.ephemeral_restore_latest[0].results[0].id
-  finished_at  = data.mongodbatlas_clusters.ephemeral_restore_latest[0].results[0].finished_at
+  job_id       = mongodbatlas_cloud_backup_snapshot_restore_job.ephemeral_restore_latest[0].id
 }
 
 resource "mongodbatlas_cloud_backup_snapshot_restore_job" "ephemeral_restore_latest" {
