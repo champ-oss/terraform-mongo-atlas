@@ -13,6 +13,7 @@ def getrestorejob(public, private, url, id, cluster_name, restore_job_id):
     try:
         restore_url = url + "/groups/" + id + "/clusters/" +  cluster_name + "/backup/restoreJobs/" + restore_job_id
         response = requests.request("GET", restore_url, auth=HTTPDigestAuth(public, private))
+        print(response)
         restore_status = json.loads(response.content)
         finished_by = restore_status['finishedAt']
         print(finished_by)

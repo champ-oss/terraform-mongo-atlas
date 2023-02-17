@@ -28,7 +28,7 @@ resource "null_resource" "exec_mongo-restore-job-status-check" {
   count = var.enable_ephemeral_restore_latest ? 1 : 0
   provisioner "local-exec" {
 
-    command     = "sleep 10 && chmod +x ${path.module}/mongo-restore-job-api.py;pip3 install retry;python ${path.module}/mongo-restore-job-api.py"
+    command     = "sleep 45 && chmod +x ${path.module}/mongo-restore-job-api.py;pip3 install retry;python ${path.module}/mongo-restore-job-api.py"
     interpreter = ["bash", "-c"]
     environment = {
       MONGODB_ATLAS_GROUP_ID       = data.mongodbatlas_cloud_backup_snapshots.ephemeral_restore_latest[0].project_id
