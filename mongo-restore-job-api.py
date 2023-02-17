@@ -18,9 +18,9 @@ def getrestorejob(public, private, url, id, cluster_name, restore_job_id):
         print(finished_by)
         if not finished_by:
             raise
-        except Exception as error:
-                print(error)
-                raise
+    except Exception as error:
+        print(error)
+        raise
 
 def main():
     base_url = "https://cloud.mongodb.com/api/atlas/v1.0"
