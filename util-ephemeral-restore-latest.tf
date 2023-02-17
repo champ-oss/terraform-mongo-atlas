@@ -12,10 +12,18 @@ data "mongodbatlas_cloud_backup_snapshots" "ephemeral_restore_latest" {
 }
 
 resource "time_static" "restore_time" {
-  count        = var.enable_ephemeral_restore_latest ? 1 : 0
+  count = var.enable_ephemeral_restore_latest ? 1 : 0
   triggers = {
-    timestamp = mongodbatlas_cloud_backup_snapshot_restore_job.mongodbatlas_cloud_backup_snapshot_restore_job[0].finished_at
+    timestamp = data.mongodbatlas_cloud_backup_snapshot_restore_job.this[0].finished_at
   }
+  depends_on = [mongodbatlas_cloud_backup_snapshot_restore_job.mongodbatlas_cloud_backup_snapshot_restore_job]
+}
+
+data "mongodbatlas_cloud_backup_snapshot_restore_job" "this" {
+  count = var.enable_ephemeral_restore_latest ? 1 : 0
+  project_id     = mongodbatlas_cloud_backup_snapshot_restore_job.mongodbatlas_cloud_backup_snapshot_restore_job[0].project_id
+  cluster_name = mongodbatlas_cloud_backup_snapshot_restore_job.mongodbatlas_cloud_backup_snapshot_restore_job[0].cluster_name
+  job_id       = mongodbatlas_cloud_backup_snapshot_restore_job.mongodbatlas_cloud_backup_snapshot_restore_job[0].id
 }
 
 resource "mongodbatlas_cloud_backup_snapshot_restore_job" "mongodbatlas_cloud_backup_snapshot_restore_job" {
