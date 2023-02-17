@@ -27,5 +27,5 @@ output "project_id" {
 
 output "mongo_restore_finished_at_time" {
   description = "https://registry.terraform.io/providers/mongodb/mongodbatlas/latest/docs/resources/cloud_backup_snapshot_restore_job#finished_at"
-  value       = var.enable_ephemeral_restore_latest ? data.mongodbatlas_cloud_backup_snapshot_restore_jobs.ephemeral_restore_latest[0].finished_at : null
+  value       = var.enable_ephemeral_restore_latest ? mongodbatlas_cloud_backup_snapshot_restore_job.ephemeral_restore_latest[0].finished_at : null
 }
