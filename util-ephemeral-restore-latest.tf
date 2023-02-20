@@ -25,7 +25,7 @@ resource "mongodbatlas_cloud_backup_snapshot_restore_job" "mongodbatlas_cloud_ba
 }
 
 data "mongodbatlas_cloud_backup_snapshot_restore_job" "this" {
-  count = var.enable_ephemeral_restore_latest ? 1 : 0
+  count        = var.enable_ephemeral_restore_latest ? 1 : 0
   project_id   = data.mongodbatlas_clusters.ephemeral_restore_latest[0].project_id
   cluster_name = data.mongodbatlas_clusters.ephemeral_restore_latest[0].results[0].name
   job_id       = mongodbatlas_cloud_backup_snapshot_restore_job.mongodbatlas_cloud_backup_snapshot_restore_job[0].snapshot_restore_job_id
@@ -34,7 +34,7 @@ data "mongodbatlas_cloud_backup_snapshot_restore_job" "this" {
 resource "null_resource" "exec_mongo-restore-job-status-check" {
   count = var.enable_ephemeral_restore_latest ? 1 : 0
   triggers = {
-    data.mongodbatlas_cloud_backup_snapshots.ephemeral_restore_latest[0].results[0].id
+    snapshot_id = data.mongodbatlas_cloud_backup_snapshots.ephemeral_restore_latest[0].results[0].id
   }
   provisioner "local-exec" {
 
