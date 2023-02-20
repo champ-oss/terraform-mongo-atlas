@@ -31,7 +31,7 @@ data "mongodbatlas_cloud_backup_snapshot_restore_job" "this" {
   job_id       = mongodbatlas_cloud_backup_snapshot_restore_job.mongodbatlas_cloud_backup_snapshot_restore_job[0].snapshot_restore_job_id
 }
 
-resource "null_resource" "exec_mongo-restore-job-status-check" {
+resource "null_resource" "exec_mongo_restore_job_status_check" {
   count = var.enable_ephemeral_restore_latest ? 1 : 0
   triggers = {
     snapshot_id = data.mongodbatlas_cloud_backup_snapshots.ephemeral_restore_latest[0].results[0].id
