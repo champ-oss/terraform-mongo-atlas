@@ -7,7 +7,8 @@ from requests.auth import HTTPDigestAuth
 from retry import retry
 
 
-@retry(delay=60, tries=10)
+# get restore job id and check restore status on finished_by time stamp.  retry logic added
+@retry(delay=30, tries=30)
 def getrestorejob(public, private, url, id, cluster_name, restore_job_id):
     status = None
     try:

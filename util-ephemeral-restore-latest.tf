@@ -38,7 +38,7 @@ resource "null_resource" "exec_mongo-restore-job-status-check" {
   }
   provisioner "local-exec" {
 
-    command     = "sleep 30 && chmod +x ${path.module}/mongo-restore-job-api.py;pip3 install retry;python ${path.module}/mongo-restore-job-api.py"
+    command     = "sleep 30 && chmod +x ${path.module}/mongo-restore-job-status.py;pip3 install -r ${path.module}/requirements.txt;python ${path.module}/mongo-restore-job-status.py"
     interpreter = ["bash", "-c"]
     environment = {
       MONGODB_ATLAS_GROUP_ID       = data.mongodbatlas_clusters.ephemeral_restore_latest[0].project_id
