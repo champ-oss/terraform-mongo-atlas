@@ -33,6 +33,9 @@ data "mongodbatlas_cloud_backup_snapshot_restore_job" "this" {
 
 resource "null_resource" "exec_mongo-restore-job-status-check" {
   count = var.enable_ephemeral_restore_latest ? 1 : 0
+  triggers = {
+    data.mongodbatlas_cloud_backup_snapshots.ephemeral_restore_latest[0].results[0].id
+  }
   provisioner "local-exec" {
 
     command     = "sleep 30 && chmod +x ${path.module}/mongo-restore-job-api.py;pip3 install retry;python ${path.module}/mongo-restore-job-api.py"
