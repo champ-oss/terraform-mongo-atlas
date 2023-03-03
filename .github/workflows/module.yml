@@ -112,7 +112,7 @@ jobs:
 
   github-issue-notification:
     needs: [ module ]
-    if: failure()
+    if: failure() && github.ref_name == 'main'
     runs-on: ubuntu-latest
     steps:
       - name: checkout
