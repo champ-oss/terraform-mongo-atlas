@@ -15,6 +15,7 @@ concurrency: this
 env:
   TF_INPUT: false
   TF_IN_AUTOMATION: true
+  TF_STATE_BUCKET: "env-tfbackend-oss-backend"
   AWS_DEFAULT_REGION: ${{ secrets.AWS_DEFAULT_REGION }}
   MONGODB_ATLAS_PRIVATE_KEY: ${{ secrets.MONGODB_ATLAS_PRIVATE_KEY }}
   MONGODB_ATLAS_PUBLIC_KEY: ${{ secrets.MONGODB_ATLAS_PUBLIC_KEY }}
