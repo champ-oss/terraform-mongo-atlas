@@ -15,6 +15,7 @@ concurrency: this
 env:
   TF_INPUT: false
   TF_IN_AUTOMATION: true
+  TF_STATE_BUCKET: "env-tfbackend-oss-backend"
   AWS_DEFAULT_REGION: ${{ secrets.AWS_DEFAULT_REGION }}
   MONGODB_ATLAS_PRIVATE_KEY: ${{ secrets.MONGODB_ATLAS_PRIVATE_KEY }}
   MONGODB_ATLAS_PUBLIC_KEY: ${{ secrets.MONGODB_ATLAS_PUBLIC_KEY }}
@@ -39,7 +40,7 @@ jobs:
       matrix: ${{ steps.set-matrix.outputs.matrix }}
     steps:
       - uses: actions/checkout@v3
-      - uses: aws-actions/configure-aws-credentials@v1
+      - uses: aws-actions/configure-aws-credentials@v2
         with:
           role-to-assume: ${{ secrets.AWS_ROLE_TO_ASSUME }}
           aws-region: ${{ env.AWS_DEFAULT_REGION }}
@@ -59,7 +60,7 @@ jobs:
         testcase: ${{fromJSON(needs.list-tests.outputs.matrix)}}
     steps:
       - uses: actions/checkout@v3
-      - uses: aws-actions/configure-aws-credentials@v1
+      - uses: aws-actions/configure-aws-credentials@v2
         with:
           role-to-assume: ${{ secrets.AWS_ROLE_TO_ASSUME }}
           aws-region: ${{ env.AWS_DEFAULT_REGION }}
@@ -68,7 +69,7 @@ jobs:
           terraform_version: 1.3.5 # https://github.com/hashicorp/terraform/releases
           terraform_wrapper: false
 
-      - uses: actions/setup-go@v2
+      - uses: actions/setup-go@v3
         with:
           go-version: 1.17
 
