@@ -82,7 +82,7 @@ variable "existing_teams" {
 variable "auto_scaling_disk_gb_enabled" {
   description = "https://registry.terraform.io/providers/mongodb/mongodbatlas/latest/docs/resources/cluster#auto_scaling_disk_gb_enabled"
   type        = bool
-  default     = null
+  default     = true
 }
 
 variable "cloud_backup" {
@@ -156,3 +156,29 @@ variable "source_snapshot_id" {
   type        = string
   default     = null
 }
+
+variable "auto_scaling_compute_scale_down_enabled" {
+  description = "https://registry.terraform.io/providers/mongodb/mongodbatlas/latest/docs/resources/cluster#auto_scaling_compute_scale_down_enabled"
+  type        = bool
+  default     = true
+}
+
+variable "auto_scaling_compute_enabled" {
+  description = "https://registry.terraform.io/providers/mongodb/mongodbatlas/latest/docs/resources/cluster#auto_scaling_compute_enabled"
+  type        = bool
+  default     = true
+}
+
+variable "provider_auto_scaling_compute_max_instance_size" {
+  description = "https://registry.terraform.io/providers/mongodb/mongodbatlas/latest/docs/resources/cluster#auto_scaling_compute_enabled"
+  type        = string
+  default     = null
+}
+
+variable "provider_auto_scaling_compute_min_instance_size" {
+  description = "https://registry.terraform.io/providers/mongodb/mongodbatlas/latest/docs/resources/cluster#auto_scaling_compute_scale_down_enabled"
+  type        = string
+  default     = null
+}
+
+

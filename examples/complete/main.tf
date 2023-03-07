@@ -20,11 +20,12 @@ module "this" {
     }
   ]
 
-  disk_size_gb                 = 10
-  cloud_backup                 = true
-  auto_scaling_disk_gb_enabled = false
-  provider_name                = "AWS"
-  mongo_region                 = "US_EAST_2"
+  disk_size_gb                                    = 10
+  cloud_backup                                    = true
+  provider_name                                   = "AWS"
+  mongo_region                                    = "US_EAST_2"
+  provider_auto_scaling_compute_min_instance_size = "M10"
+  provider_auto_scaling_compute_max_instance_size = "M30"
 
   /*
   replication specs not available with free tier, example below
