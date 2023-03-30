@@ -8,7 +8,7 @@ from retry import retry
 
 
 # get restore job id and check restore status on finished_by time stamp.  retry logic added
-@retry(delay=30, tries=30)
+@retry(delay=30, tries=120)
 def getrestorejob(public, private, url, id, cluster_name, restore_job_id):
     status = None
     try:
