@@ -1,3 +1,5 @@
+name: sync
+
 on:
   workflow_dispatch:
   schedule:
@@ -11,7 +13,7 @@ jobs:
         with:
           token: ${{ secrets.ACTION_TOKEN }}
 
-      - uses: champ-oss/file-sync@v1.0.5-dfb3694
+      - uses: champ-oss/file-sync@v1.0.41-5e961bb
         with:
           token: ${{ secrets.ACTION_TOKEN }}
           repo: champ-oss/terraform-module-template
@@ -25,5 +27,5 @@ jobs:
             .github/workflows/module.yml
             .github/workflows/release.yml
             .github/workflows/sonar.yml
-            .github/workflows/doc.yml
-
+            .github/workflows/sync.yml
+            .github/workflows/combine-prs.yml
