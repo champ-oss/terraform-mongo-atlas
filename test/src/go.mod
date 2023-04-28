@@ -3,7 +3,7 @@ module github.com/champ-oss/terraform-mongo-atlas
 go 1.17
 
 require (
-	github.com/gruntwork-io/terratest v0.41.18
+	github.com/gruntwork-io/terratest v0.41.20
 	go.mongodb.org/mongo-driver v1.11.4
 )
 
