@@ -41,7 +41,7 @@ resource "mongodbatlas_cluster" "this" {
       provider_instance_size_name, # enable cluster auto scaling could cause drift
       disk_size_gb,                # enable auto scaling disk size could cause drift
       mongo_db_major_version,
-      name # setting character limit of 23, 23 character can not end in a dash
+      name # setting character limit of 23, character can not end in a hyphen
       # https://registry.terraform.io/providers/mongodb/mongodbatlas/latest/docs/resources/cluster#provider_instance_size_name
     ]
   }
