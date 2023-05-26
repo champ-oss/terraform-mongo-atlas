@@ -11,3 +11,11 @@ resource "random_string" "this" {
   number  = true
 }
 
+resource "random_string" "limit" {
+  length  = 5
+  special = false
+  upper   = false
+  lower   = true
+  number  = true
+}
+
