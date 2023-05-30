@@ -1,5 +1,5 @@
 resource "mongodbatlas_project" "this" {
-  name   = substr("${var.project_name}-${random_string.limit.result}", 0, 64) # 64 character max length
+  name   = substr(var.project_name, 0, 64) # 64 character max length
   org_id = var.org_id
 
   dynamic "teams" {
