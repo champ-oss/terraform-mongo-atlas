@@ -1,5 +1,5 @@
 resource "mongodbatlas_project" "this" {
-  name   = var.project_name
+  name   = substr(var.project_name, 0, 64) # 64 character max length
   org_id = var.org_id
 
   dynamic "teams" {
@@ -18,4 +18,12 @@ resource "mongodbatlas_project" "this" {
       role_names = teams.value.role_names
     }
   }
+
+  lifecycle {
+    prevent_destroy = true
+    ignore_changes = [
+      name # setting character limit of 64
+    ]
+  }
+
 }

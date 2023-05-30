@@ -1,6 +1,6 @@
 resource "mongodbatlas_cluster" "this" {
   project_id = mongodbatlas_project.this.id
-  name       = var.cluster_name
+  name       = trimsuffix(substr("${var.cluster_name}-${random_string.limit.result}", 0, 23), "-")
 
   # Provider Settings "block"
   # setting backing provider name to null as it's not available for provider_instance_size_name >= M10
@@ -40,9 +40,9 @@ resource "mongodbatlas_cluster" "this" {
     ignore_changes = [
       provider_instance_size_name, # enable cluster auto scaling could cause drift
       disk_size_gb,                # enable auto scaling disk size could cause drift
-      mongo_db_major_version
+      mongo_db_major_version,
+      name # ignore changes for rename
       # https://registry.terraform.io/providers/mongodb/mongodbatlas/latest/docs/resources/cluster#provider_instance_size_name
     ]
   }
 }
-
