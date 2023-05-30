@@ -7,7 +7,7 @@ module "this" {
   project_name                = "mongo-example"
   git                         = local.git
   org_id                      = var.org_id
-  cluster_name                = local.git
+  cluster_name                = "${local.git}-cluster"
   provider_instance_size_name = "M10"
   replication_specs = [
     {
