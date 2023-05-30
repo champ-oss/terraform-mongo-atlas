@@ -1,5 +1,5 @@
 locals {
-  git = "terraform-mongo"
+  git = "terraform-mongo-atlas"
 }
 
 module "this" {
