@@ -57,3 +57,4 @@ func TestExamplesCluster(t *testing.T) {
 		panic(err)
 	}
 	fmt.Println("Successfully connected")
+}
