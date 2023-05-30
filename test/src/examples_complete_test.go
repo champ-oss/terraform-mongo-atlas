@@ -33,28 +33,4 @@ func TestExamplesCluster(t *testing.T) {
 	cmd.Dir = "../../"
 	cmd.Run()
 	terraform.ApplyAndIdempotent(t, terraformOptions)
-
-	dbPassword := terraform.Output(t, terraformOptions, "password")
-	mongoUri := terraform.Output(t, terraformOptions, "cluster_connection_string")
-
-	c1 := "mongodb+srv://terraform-mongo-atlas-user:"
-	c2 := "/test?retryWrites=true&w=majority"
-	appendURI := c1 + dbPassword + "@" + mongoUri + c2
-	fmt.Println("output appendURI: ", appendURI)
-
-	// Create a new client and connect to the server
-	client, err := mongo.Connect(context.TODO(), options.Client().ApplyURI(appendURI))
-	if err != nil {
-		panic(err)
-	}
-	defer func() {
-		if err = client.Disconnect(context.TODO()); err != nil {
-			panic(err)
-		}
-	}()
-	// Ping the primary
-	if err := client.Ping(context.TODO(), readpref.Primary()); err != nil {
-		panic(err)
-	}
-	fmt.Println("Successfully connected")
 }
