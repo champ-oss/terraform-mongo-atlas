@@ -17,6 +17,7 @@ resource "aws_dms_endpoint" "this" {
   port          = local.shards_map[0].port
   server_name   = local.shards_map[0].host
   username      = mongodbatlas_database_user.this.username
+  ssl_mode      = var.dms_ssl_mode
 
   tags = {
     creator      = "terraform"

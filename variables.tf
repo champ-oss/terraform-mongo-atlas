@@ -193,6 +193,12 @@ variable "dms_endpoint_type" {
   default     = "source"
 }
 
+variable "dms_ssl_mode" {
+  description = "https://registry.terraform.io/providers/hashicorp/aws/3.3.0/docs/resources/dms_endpoint#ssl_mode"
+  type        = string
+  default     = "require"
+}
+
 variable "dms_auth_mechanism" {
   description = "https://registry.terraform.io/providers/hashicorp/aws/3.3.0/docs/resources/dms_endpoint#auth_mechanism"
   type        = string
