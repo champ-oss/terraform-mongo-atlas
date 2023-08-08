@@ -193,4 +193,40 @@ variable "dms_endpoint_type" {
   default     = "source"
 }
 
+variable "dms_auth_mechanism" {
+  description = "https://registry.terraform.io/providers/hashicorp/aws/3.3.0/docs/resources/dms_endpoint#auth_mechanism"
+  type        = string
+  default     = "default"
+}
+
+variable "dms_auth_source" {
+  description = "https://registry.terraform.io/providers/hashicorp/aws/3.3.0/docs/resources/dms_endpoint#auth_source"
+  type        = string
+  default     = "admin"
+}
+
+variable "dms_auth_type" {
+  description = "https://registry.terraform.io/providers/hashicorp/aws/3.3.0/docs/resources/dms_endpoint#auth_type"
+  type        = string
+  default     = "password"
+}
+
+variable "dms_docs_to_investigate" {
+  description = "https://registry.terraform.io/providers/hashicorp/aws/3.3.0/docs/resources/dms_endpoint#docs_to_investigate"
+  type        = number
+  default     = 1000
+}
+
+variable "dms_extract_doc_id" {
+  description = "https://registry.terraform.io/providers/hashicorp/aws/3.3.0/docs/resources/dms_endpoint#extract_doc_id"
+  type        = bool
+  default     = false
+}
+
+variable "dms_nesting_level" {
+  description = "https://registry.terraform.io/providers/hashicorp/aws/3.3.0/docs/resources/dms_endpoint#nesting_level"
+  type        = string
+  default     = "none"
+}
+
 

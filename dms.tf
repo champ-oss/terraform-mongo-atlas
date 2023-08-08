@@ -27,6 +27,15 @@ resource "aws_dms_endpoint" "this" {
     component    = var.component
   }
 
+  mongodb_settings {
+    auth_mechanism      = var.dms_auth_mechanism
+    auth_source         = var.dms_auth_source
+    auth_type           = var.dms_auth_type
+    docs_to_investigate = var.dms_docs_to_investigate
+    extract_doc_id      = var.dms_extract_doc_id
+    nesting_level       = var.dms_nesting_level
+  }
+
   timeouts {
     create = "60m"
     delete = "60m"
