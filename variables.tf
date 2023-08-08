@@ -181,4 +181,16 @@ variable "provider_auto_scaling_compute_min_instance_size" {
   default     = null
 }
 
+variable "create_dms_endpoint" {
+  description = "https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/dms_endpoint"
+  type        = bool
+  default     = false
+}
+
+variable "dms_endpoint_type" {
+  description = "https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/dms_endpoint#endpoint_type"
+  type        = string
+  default     = "source"
+}
+
 
