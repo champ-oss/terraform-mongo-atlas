@@ -6,7 +6,7 @@ module "this" {
   source                      = "../../"
   project_name                = "mongo-example"
   git                         = local.git
-  org_id                      = var.org_id
+  org_id                      = var.mongo_atlas_org
   cluster_name                = "${local.git}-cluster"
   provider_instance_size_name = "M10"
   replication_specs = [
@@ -64,4 +64,35 @@ module "this" {
   target_project_id              = "12345"
   target_cluster_name            = "blah"
   */
+}
+
+output "password" {
+  description = "https://registry.terraform.io/providers/hashicorp/random/latest/docs/resources/password"
+  value       = module.this.password
+  sensitive   = true
+}
+
+output "standard_srv" {
+  description = "mongo endpoint uri"
+  value       = module.this.standard_srv
+}
+
+output "cluster_connection_string" {
+  description = "trimmed down mongo uri"
+  value       = module.this.cluster_connection_string
+}
+
+output "project_id" {
+  description = "https://registry.terraform.io/providers/mongodb/mongodbatlas/latest/docs/resources/project#id"
+  value       = module.this.project_id
+}
+
+variable "org_id" {
+  description = "org id"
+  type        = string
+}
+
+variable "mongo_atlas_org" {
+  description = "org id"
+  type        = string
 }
