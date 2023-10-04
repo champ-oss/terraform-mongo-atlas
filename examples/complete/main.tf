@@ -6,7 +6,7 @@ module "this" {
   source                      = "../../"
   project_name                = "mongo-example"
   git                         = local.git
-  org_id                      = var.mongo_atlas_org
+  org_id                      = var.org_id
   cluster_name                = "${local.git}-cluster"
   provider_instance_size_name = "M10"
   replication_specs = [
@@ -88,11 +88,6 @@ output "project_id" {
 }
 
 variable "org_id" {
-  description = "org id"
-  type        = string
-}
-
-variable "mongo_atlas_org" {
   description = "org id"
   type        = string
 }
