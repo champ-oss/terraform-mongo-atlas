@@ -10,7 +10,7 @@ locals {
 
 resource "aws_dms_endpoint" "this" {
   count         = var.create_dms_endpoint ? 1 : 0
-  endpoint_id   = mongodbatlas_cluster.this.name
+  endpoint_id   = var.project_name
   endpoint_type = var.dms_endpoint_type
   engine_name   = "mongodb"
   password      = random_password.this.result
