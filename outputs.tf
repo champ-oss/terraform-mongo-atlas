@@ -15,6 +15,12 @@ output "password" {
   sensitive   = true
 }
 
+output "mongo_read_only_password" {
+  description = "https://registry.terraform.io/providers/hashicorp/random/latest/docs/resources/password"
+  value       = random_password.read_only.result
+  sensitive   = true
+}
+
 output "cluster_connection_string" {
   description = "trimmed down mongo uri endpoint"
   value       = split("//", mongodbatlas_cluster.this.connection_strings[0].standard_srv)[1]
