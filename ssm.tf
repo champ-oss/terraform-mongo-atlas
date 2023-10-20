@@ -1,5 +1,5 @@
 resource "aws_ssm_parameter" "mongo_read_only" {
-  name  = trim("/${var.git}/mongo/${mongodbatlas_cluster.this.connection_strings[0].standard_srv}/password", "mongodb+srv://")
+  name  = split("//", "/${var.git}/mongodbatlas_cluster.this.connection_strings[0].standard_srv)[1]")
   type  = "SecureString"
   value = random_password.read_only.result
   tags = {

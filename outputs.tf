@@ -35,5 +35,3 @@ output "snapshot_restore_job_id" {
   description = "https://registry.terraform.io/providers/mongodb/mongodbatlas/latest/docs/resources/cloud_backup_snapshot_restore_job#finished_at"
   value       = var.enable_ephemeral_restore_latest ? mongodbatlas_cloud_backup_snapshot_restore_job.mongodbatlas_cloud_backup_snapshot_restore_job[0].snapshot_restore_job_id : null
 }
-
-
