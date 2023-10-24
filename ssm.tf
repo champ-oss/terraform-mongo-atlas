@@ -1,5 +1,5 @@
 resource "aws_ssm_parameter" "mongo_read_only" {
-  name  = var.project_name
+  name  = "/mongo/${var.project_name}-read-only"
   type  = "SecureString"
   value = random_password.read_only.result
   tags = {
