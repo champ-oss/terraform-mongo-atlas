@@ -36,7 +36,6 @@ resource "mongodbatlas_cluster" "this" {
   disk_size_gb                            = var.disk_size_gb
 
   lifecycle {
-    prevent_destroy = true
     ignore_changes = [
       provider_instance_size_name, # enable cluster auto scaling could cause drift
       disk_size_gb,                # enable auto scaling disk size could cause drift
