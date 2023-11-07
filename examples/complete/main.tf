@@ -2,7 +2,10 @@ locals {
   git = "terraform-mongo-atlas"
 }
 
-variable "mongodb_atlas_org" {}
+variable "mongodb_atlas_org" {
+  description = "Organization ID"
+  type        = string
+}
 
 module "this" {
   source                      = "../../"
