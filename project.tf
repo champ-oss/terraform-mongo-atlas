@@ -20,7 +20,6 @@ resource "mongodbatlas_project" "this" {
   }
 
   lifecycle {
-    prevent_destroy = true
     ignore_changes = [
       name # setting character limit of 64
     ]
