@@ -235,4 +235,9 @@ variable "dms_nesting_level" {
   default     = "none"
 }
 
+variable "termination_protection_enabled" {
+  description = "https://registry.terraform.io/providers/mongodb/mongodbatlas/1.6.0/docs/resources/cluster#termination_protection_enabled"
+  type        = bool
+  default     = true
+}
 

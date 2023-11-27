@@ -2,13 +2,19 @@ locals {
   git = "terraform-mongo-atlas"
 }
 
+variable "mongodb_atlas_org" {
+  description = "Organization ID"
+  type        = string
+}
+
 module "this" {
-  source                      = "../../"
-  project_name                = "mongo-example"
-  git                         = local.git
-  org_id                      = var.org_id
-  cluster_name                = "${local.git}-cluster"
-  provider_instance_size_name = "M10"
+  source                         = "../../"
+  project_name                   = "mongo-example"
+  git                            = local.git
+  org_id                         = var.mongodb_atlas_org
+  cluster_name                   = "${local.git}-cluster"
+  provider_instance_size_name    = "M10"
+  termination_protection_enabled = false
   replication_specs = [
     {
       num_shards : 1,

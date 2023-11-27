@@ -3,12 +3,17 @@ resource "random_password" "this" {
   special = false
 }
 
+resource "random_password" "read_only" {
+  length  = 20
+  special = false
+}
+
 resource "random_string" "this" {
   length  = 10
   special = false
   upper   = false
   lower   = true
-  number  = true
+  numeric = true
 }
 
 resource "random_string" "limit" {
@@ -16,5 +21,5 @@ resource "random_string" "limit" {
   special = false
   upper   = false
   lower   = true
-  number  = true
+  numeric = true
 }
