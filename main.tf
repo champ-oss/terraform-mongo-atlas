@@ -13,7 +13,7 @@ resource "random_string" "this" {
   special = false
   upper   = false
   lower   = true
-  number  = true
+  numeric = true
 }
 
 resource "random_string" "limit" {
@@ -21,5 +21,5 @@ resource "random_string" "limit" {
   special = false
   upper   = false
   lower   = true
-  number  = true
+  numeric = true
 }
