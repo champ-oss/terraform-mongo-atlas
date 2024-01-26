@@ -70,7 +70,7 @@ variable "disk_size_gb" {
 variable "teams" {
   description = "https://registry.terraform.io/providers/mongodb/mongodbatlas/latest/docs/resources/team#name"
   type        = map(any)
-  default     = {}
+  default     = null
 }
 
 variable "existing_teams" {
