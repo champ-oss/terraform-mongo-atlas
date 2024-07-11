@@ -45,8 +45,8 @@ variable "component" {
 
 variable "project_ip_address_allow_list" {
   description = "https://registry.terraform.io/providers/mongodb/mongodbatlas/latest/docs/resources/project_ip_access_list#ip_address"
-  type        = any
-  default     = ["0.0.0.0/0"]
+  type        = list(string)
+  default     = []
 }
 
 variable "day_of_week" {
