@@ -33,6 +33,7 @@ module "this" {
   cluster_name                   = "${local.git}-cluster"
   provider_instance_size_name    = "M10"
   termination_protection_enabled = false
+  project_ip_address_allow_list  = ["0.0.0.0/32"]
   replication_specs = [
     {
       num_shards : 1,
