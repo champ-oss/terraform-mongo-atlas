@@ -1,11 +1,11 @@
 moved {
   from = mongodbatlas_cluster.this
-  to   = mongodb_atlas_cluster.this[0]
+  to   = mongodbatlas_cluster.this[0]
 }
 
 moved {
   from = mongodbatlas_database_user.this
-  to   = mongodbatlas_database_useer.this[0]
+  to   = mongodbatlas_database_user.this[0]
 }
 
 moved {
