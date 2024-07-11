@@ -1,4 +1,5 @@
 resource "mongodbatlas_database_user" "this" {
+  count              = var.enabled ? 1 : 0
   username           = "${var.git}-user"
   password           = random_password.this.result
   project_id         = mongodbatlas_project.this.id
@@ -11,9 +12,10 @@ resource "mongodbatlas_database_user" "this" {
 }
 
 resource "mongodbatlas_database_user" "read_only" {
+  count              = var.enabled ? 1 : 0
   username           = "${var.git}-read-only-user"
-  password           = random_password.read_only.result
-  project_id         = mongodbatlas_project.this.id
+  password           = random_password.read_only[0].result
+  project_id         = mongodbatlas_project.this[0].id
   auth_database_name = "admin"
 
   roles {
@@ -21,4 +23,3 @@ resource "mongodbatlas_database_user" "read_only" {
     database_name = "admin"
   }
 }
-
