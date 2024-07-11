@@ -1,34 +1,34 @@
 output "id" {
   description = "https://registry.terraform.io/providers/mongodb/mongodbatlas/latest/docs/resources/project#id"
-  value       = mongodbatlas_project.this.id
+  value       = var.enabled ? mongodbatlas_project.this[0].id : ""
 }
 
 output "standard_srv" {
   description = "mongo uri endpoint"
-  value       = mongodbatlas_cluster.this.connection_strings[0].standard_srv
+  value       = var.enabled ? mongodbatlas_cluster.this[0].connection_strings[0].standard_srv : ""
 }
 # Example return string: standard_srv = "mongodb+srv://cluster-atlas.ygo1m.mongodb.net"
 
 output "password" {
   description = "https://registry.terraform.io/providers/hashicorp/random/latest/docs/resources/password"
-  value       = random_password.this.result
+  value       = var.enabled ? random_password.this[0].result : ""
   sensitive   = true
 }
 
 output "mongo_read_only_password" {
   description = "https://registry.terraform.io/providers/hashicorp/random/latest/docs/resources/password"
-  value       = random_password.read_only.result
+  value       = var.enabled ? random_password.read_only[0].result : ""
   sensitive   = true
 }
 
 output "cluster_connection_string" {
   description = "trimmed down mongo uri endpoint"
-  value       = split("//", mongodbatlas_cluster.this.connection_strings[0].standard_srv)[1]
+  value       = var.enabled ? split("//", mongodbatlas_cluster.this[0].connection_strings[0].standard_srv)[1] : ""
 }
 
 output "project_id" {
   description = "https://registry.terraform.io/providers/mongodb/mongodbatlas/latest/docs/resources/project#id"
-  value       = mongodbatlas_project.this.id
+  value       = var.enabled ? mongodbatlas_project.this[0].id : ""
 }
 
 output "snapshot_restore_job_id" {

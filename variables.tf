@@ -16,7 +16,7 @@ variable "org_id" {
 variable "cluster_name" {
   description = "https://registry.terraform.io/providers/mongodb/mongodbatlas/latest/docs/resources/cluster#name"
   type        = string
-  default     = null
+  default     = "cluster"
 }
 
 variable "target_cluster_name" {
@@ -45,8 +45,8 @@ variable "component" {
 
 variable "project_ip_address_allow_list" {
   description = "https://registry.terraform.io/providers/mongodb/mongodbatlas/latest/docs/resources/project_ip_access_list#ip_address"
-  type        = list(any)
-  default     = ["0.0.0.0/0"]
+  type        = list(string)
+  default     = []
 }
 
 variable "day_of_week" {
@@ -237,6 +237,12 @@ variable "dms_nesting_level" {
 
 variable "termination_protection_enabled" {
   description = "https://registry.terraform.io/providers/mongodb/mongodbatlas/1.6.0/docs/resources/cluster#termination_protection_enabled"
+  type        = bool
+  default     = true
+}
+
+variable "enabled" {
+  description = "Set to false to prevent the module from creating any resources"
   type        = bool
   default     = true
 }
