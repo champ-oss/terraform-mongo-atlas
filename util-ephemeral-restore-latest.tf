@@ -18,8 +18,8 @@ resource "mongodbatlas_cloud_backup_snapshot_restore_job" "mongodbatlas_cloud_ba
   snapshot_id  = data.mongodbatlas_cloud_backup_snapshots.ephemeral_restore_latest[0].results[0].id
   delivery_type_config {
     automated           = true
-    target_cluster_name = mongodbatlas_cluster.this.name
-    target_project_id   = mongodbatlas_cluster.this.project_id
+    target_cluster_name = mongodbatlas_cluster.this[0].name
+    target_project_id   = mongodbatlas_cluster.this[0].project_id
   }
   depends_on = [mongodbatlas_cluster.this]
 }
