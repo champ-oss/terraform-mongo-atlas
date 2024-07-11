@@ -16,7 +16,7 @@ variable "org_id" {
 variable "cluster_name" {
   description = "https://registry.terraform.io/providers/mongodb/mongodbatlas/latest/docs/resources/cluster#name"
   type        = string
-  default     = null
+  default     = "cluster"
 }
 
 variable "target_cluster_name" {
