@@ -1,6 +1,6 @@
 resource "aws_ssm_parameter" "mongo_read_only" {
   count = var.enabled ? 1 : 0
-  name  = "/mongo/${var.project_name}-read-only"
+  name  = "/mongo/${mongodbatlas_project.this.name}-read-only"
   type  = "SecureString"
   value = random_password.read_only[0].result
   tags = {
