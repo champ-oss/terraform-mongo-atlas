@@ -44,7 +44,7 @@ resource "mongodbatlas_cluster" "this" {
       disk_size_gb,                # enable auto scaling disk size could cause drift
       mongo_db_major_version,
       paused, # adding ignore as this only last 30 days
-      name # ignore changes for rename
+      name    # ignore changes for rename
       # https://registry.terraform.io/providers/mongodb/mongodbatlas/latest/docs/resources/cluster#provider_instance_size_name
     ]
   }
