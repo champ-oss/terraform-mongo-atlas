@@ -247,3 +247,9 @@ variable "enabled" {
   default     = true
 }
 
+variable "paused" {
+  description = "Set to true to pause the module"
+  type        = bool
+  default     = false
+}
+
