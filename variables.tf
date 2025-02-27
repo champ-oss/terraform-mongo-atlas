@@ -10,6 +10,12 @@ variable "project_name" {
   default     = "terraform-mongo-atlas"
 }
 
+variable "org_id" {
+  description = "org id"
+  type        = string
+  default     = null
+}
+
 variable "cluster_name" {
   description = "https://registry.terraform.io/providers/mongodb/mongodbatlas/latest/docs/resources/cluster#name"
   type        = string
