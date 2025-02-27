@@ -1,16 +1,19 @@
 variable "git" {
   description = "Name of the Git repo"
   type        = string
+  default     = "terraform-mongo-atlas"
 }
 
 variable "project_name" {
   description = "Name of atlas project"
   type        = string
+  default     = "terraform-mongo-atlas"
 }
 
 variable "org_id" {
   description = "org id"
   type        = string
+  default     = null
 }
 
 variable "cluster_name" {

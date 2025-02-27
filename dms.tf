@@ -1,6 +1,6 @@
 locals {
   # example: mongodb://my-test-shard-00-00.nvn238v.mongodb.net:27017,my-test-shard-00-01.nvn238v.mongodb.net:27017,my-test-shard-00-02.nvn238v.mongodb.net:27017
-  shards_map = var.create_dms_endpoint ? [
+  shards_map = var.enabled && var.create_dms_endpoint ? [
     for shard in split(",", trimprefix(mongodbatlas_cluster.this[0].mongo_uri, "mongodb://")) : {
       host = split(":", shard)[0]
       port = split(":", shard)[1]
