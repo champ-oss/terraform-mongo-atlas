@@ -23,7 +23,7 @@ resource "aws_dms_endpoint" "this" {
     creator      = "terraform"
     git          = var.git
     project_name = var.project_name
-    org_id       = data.mongodbatlas_organization.this.id
+    org_id       = var.org_id
     cluster_name = var.cluster_name
     component    = var.component
   }

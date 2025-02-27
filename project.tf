@@ -1,7 +1,7 @@
 resource "mongodbatlas_project" "this" {
   count  = var.enabled ? 1 : 0
   name   = substr(var.project_name, 0, 64) # 64 character max length
-  org_id = data.mongodbatlas_organization.this.id
+  org_id = var.org_id
 
   dynamic "teams" {
     for_each = var.teams
