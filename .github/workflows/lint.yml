@@ -11,11 +11,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: hashicorp/setup-terraform@v3.0.0 # https://github.com/hashicorp/setup-terraform/releases
+      - uses: hashicorp/setup-terraform@v3.1.2 # https://github.com/hashicorp/setup-terraform/releases
         with:
           terraform_version: 1.6.2 # https://github.com/hashicorp/terraform/releases
           terraform_wrapper: false
-      - uses: terraform-linters/setup-tflint@v4.0.0 #https://github.com/terraform-linters/setup-tflint/releases
+      - uses: terraform-linters/setup-tflint@v4.1.0 #https://github.com/terraform-linters/setup-tflint/releases
         name: Setup TFLint
         with:
           tflint_version: v0.50.3 # https://github.com/terraform-linters/tflint/releases
