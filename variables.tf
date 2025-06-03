@@ -37,7 +37,13 @@ variable "provider_instance_size_name" {
 variable "mongo_db_major_version" {
   description = "https://registry.terraform.io/providers/mongodb/mongodbatlas/latest/docs/resources/cluster#mongo_db_major_version"
   type        = string
-  default     = "6.0"
+  default     = null
+}
+
+variable "pinned_fcv_expiration_date" {
+  description = "https://registry.terraform.io/providers/mongodb/mongodbatlas/latest/docs/resources/cluster#expiration_date-2"
+  type        = string
+  default     = null  
 }
 
 variable "component" {

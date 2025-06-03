@@ -12,9 +12,17 @@ resource "mongodbatlas_cluster" "this" {
   provider_auto_scaling_compute_max_instance_size = var.provider_auto_scaling_compute_max_instance_size
   provider_auto_scaling_compute_min_instance_size = var.provider_auto_scaling_compute_min_instance_size
   mongo_db_major_version                          = var.mongo_db_major_version
+  version_release_system = var.mongo_db_major_version != null ? "LTS" : "CONTINUOUS"
   cluster_type                                    = var.cluster_type
   termination_protection_enabled                  = var.termination_protection_enabled
   paused                                          = var.paused
+
+  dynamic "pinned_fcv" {
+    for_each = var.pinned_fcv_expiration_date != null ? [1] : []
+    content {
+      expiration_date = var.pinned_fcv_expiration_date
+    }
+  }
 
   # use replication specs for provider_instance_size_name >= M10
   dynamic "replication_specs" {
@@ -37,12 +45,11 @@ resource "mongodbatlas_cluster" "this" {
   auto_scaling_compute_enabled            = var.auto_scaling_compute_enabled
   auto_scaling_compute_scale_down_enabled = var.auto_scaling_compute_enabled ? var.auto_scaling_compute_scale_down_enabled : false
   disk_size_gb                            = var.disk_size_gb
-
+  
   lifecycle {
     ignore_changes = [
       provider_instance_size_name, # enable cluster auto scaling could cause drift
       disk_size_gb,                # enable auto scaling disk size could cause drift
-      mongo_db_major_version,
       paused, # adding ignore as this only last 30 days
       name    # ignore changes for rename
       # https://registry.terraform.io/providers/mongodb/mongodbatlas/latest/docs/resources/cluster#provider_instance_size_name
