@@ -43,7 +43,7 @@ variable "mongo_db_major_version" {
 variable "pinned_fcv_expiration_date" {
   description = "https://registry.terraform.io/providers/mongodb/mongodbatlas/latest/docs/resources/cluster#expiration_date-2"
   type        = string
-  default     = null  
+  default     = null
 }
 
 variable "component" {
