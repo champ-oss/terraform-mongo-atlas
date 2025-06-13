@@ -1,5 +1,5 @@
 resource "mongodbatlas_teams" "this" {
-  count = var.enabled && length(var.teams) > 0 ? 1 : 0
+  count    = var.enabled && length(var.teams) > 0 ? 1 : 0
   for_each = var.teams
 
   org_id    = var.org_id
