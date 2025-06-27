@@ -9,11 +9,6 @@ resource "mongodbatlas_database_user" "this" {
     role_name     = "readWriteAnyDatabase"
     database_name = "admin"
   }
-
-  roles {
-    role_name     = "clusterMonitor"
-    database_name = "admin"
-  }
 }
 
 resource "mongodbatlas_database_user" "read_only" {
